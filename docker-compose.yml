@@ -21,7 +21,7 @@ services:
         environment:
             POSTGRES_DB: mathites_db
             POSTGRES_USER: mathites_db_user
-            POSTGRES_PASSWORD: yourpassword
+            POSTGRES_PASSWORD: XWqsu8JhFgslNdRooXDcAhSWQGq3BUWb
         networks:
             - app-network
 
