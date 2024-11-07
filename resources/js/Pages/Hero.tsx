@@ -36,7 +36,7 @@ export default function Hero() {
             <div className="z-40 flex-1 ">
                 {/* Background Stars */}
                 <img
-                    src="Images/victoriayellow.png"
+                    src="Images/VictoriaYellow.png"
                     className="h-full  w-[300px] xs:w-[400px]  md:w-[600px]"
                     alt="Background Stars"
                 />
