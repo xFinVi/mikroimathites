@@ -11,7 +11,7 @@ const EarlyEducation = () => {
                 backgroundPosition: "top center",
             }}
         >
-            <div className="xs:w-full sm:w-4/5 flex1 group">
+            <div className="flex-1 xs:w-full sm:w-3/5 lg:w-2/5 group">
                 {/* Image */}
                 <img
                     className="object-cover w-full h-full rounded-lg shadow-lg transform transition-transform duration-300 group-hover:scale-105 group-hover:translate-x-[45px] group-hover:translate-y-[45px]"
