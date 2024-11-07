@@ -18,7 +18,7 @@ export default function Hero() {
         <div
             className="relative flex flex-col lg:flex-row   py-36 mt-20 items-center justify-center  h-[90vh] bg-cover bg-center bg-[#82CBFA]"
             style={{
-                backgroundImage: `url('images/bluebg.png')`,
+                backgroundImage: `url('Images/bluebg.png')`,
             }}
             onMouseMove={handleMouseMove}
         >
