@@ -67,16 +67,12 @@ const Competition = ({ auth }: PageProps) => {
         };
 
         try {
-            const response = await axios.post(
-                "http://localhost:8000/competition",
-                userData,
-                {
-                    headers: {
-                        "Content-Type": "application/json",
-                        "X-CSRF-TOKEN": csrfToken,
-                    },
-                }
-            );
+            const response = await axios.post("/competition", userData, {
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRF-TOKEN": csrfToken,
+                },
+            });
 
             console.log("Success:", response.data);
             setSuccess("🎉 Καλή επιτυχία! 🎉");

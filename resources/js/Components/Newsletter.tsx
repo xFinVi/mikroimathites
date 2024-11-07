@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Confetti from "react-confetti";
 import "../../css/app.css";
+import axios from "axios";
 
 export default function Newsletter() {
     const [email, setEmail] = useState("");
@@ -19,19 +20,14 @@ export default function Newsletter() {
                 ?.getAttribute("content") || "";
 
         try {
-            const response = await fetch(
-                "http://localhost:8000/api/subscribe",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "X-CSRF-TOKEN": csrfToken, // Include CSRF token
-                    },
-                    body: JSON.stringify({ email }),
-                }
-            );
+            const response = await axios.post("/api/subscribe", email, {
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRF-TOKEN": csrfToken, // Include CSRF token
+                },
+            });
 
-            if (!response.ok) {
+            if (!response.status) {
                 throw new Error("Failed to subscribe");
             }
 
