@@ -7,7 +7,7 @@ import { useState } from "react";
 const Blog = ({ auth }: PageProps) => {
     return (
         <PageLayout auth={auth}>
-            <Head title="Blog" />
+            <Head title="Βίντεο" />
             <div
                 className="h-[80vh] py-20 flex justify-center items-start"
                 style={{

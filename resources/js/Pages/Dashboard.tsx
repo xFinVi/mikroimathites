@@ -1,10 +1,14 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head } from "@inertiajs/react";
-import { ReactElement, useState } from "react";
+
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function Dashboard() {
-    const [successMessage, setSuccessMessage] = useState<string>("");
     const [error, setError] = useState<string>("");
+    const [showConfetti, setShowConfetti] = useState(false);
+    const [successMessage, setSuccessMessage] = useState<string>("");
+
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [formData, setFormData] = useState<{
         name: string;
@@ -23,29 +27,58 @@ export default function Dashboard() {
     ) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
-
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {};
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        try {
+            const message = { ...formData };
+            const csrfToken = document
+                .querySelector('meta[name="csrf-token"]')
+                ?.getAttribute("content");
+            const response = await axios.post("/contact", message, {
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRF-TOKEN": csrfToken || "",
+                },
+            });
+            setSuccessMessage(
+                "Ευχαριστούμε για την επικοινωνία σας. Θα απαντήσουμε σύντομα!"
+            );
+            setError("");
+            setShowConfetti(true);
+            setFormData({
+                name: "",
+                last_name: "",
+                email: "",
+                message: "",
+            });
+        } catch (error) {
+            console.error("Error:", error);
+            setError(
+                "Υπήρξε πρόβλημα με την αποστολή του μηνύματος. Προσπαθήστε ξανά."
+            );
+        }
+    };
     return (
         <AuthenticatedLayout
             header={
-                <h2 className="text-xl font-semibold leading-tight text-gray-800">
+                <h2 className="text-2xl font-semibold leading-tight text-[#3f2b8e]">
                     Dashboard
                 </h2>
             }
         >
             <Head title="Dashboard" />
 
-            <div className="py-12">
+            <div className="py-12 bg-[#fff]/90">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-center text-gray-900">
+                        <div className="p-6 text-center text-[#3f2b8e] bg-white font-semibold mynerve">
                             Είσαι συνδεδεμένος!
                         </div>
                         <div>
-                            <div className="flex justify-center my-4">
+                            {/*  <div className="flex justify-center my-4">
                                 <button
                                     onClick={() => setIsModalOpen(true)}
-                                    className="px-4 py-2 text-white bg-blue-600 rounded-lg"
+                                    className="px-4 py-2 text-white mynerve bg-[#8a3acf] rounded-lg"
                                 >
                                     Στείλε στην Βικτωρία
                                 </button>
@@ -53,7 +86,7 @@ export default function Dashboard() {
                             {isModalOpen && (
                                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#001845] bg-opacity-90">
                                     <div className="w-[350px] relative p-8 bg-white border border-white rounded-lg shadow-lg  xs:mx-auto sm:mx-0 ">
-                                        <h1 className="text-2xl  text-center font-chewy text-[#0096CF] w-full py-4 mb-4">
+                                        <h1 className="text-2xl  text-center roboto text-[#0096CF] w-full py-4 mb-4">
                                             Στείλε μήνυμα στην Βικτωρία
                                         </h1>
 
@@ -133,7 +166,7 @@ export default function Dashboard() {
                                         </form>
                                     </div>
                                 </div>
-                            )}
+                            )} */}
                         </div>
                     </div>
                 </div>

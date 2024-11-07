@@ -49,8 +49,20 @@
     font-family: "Fredoka", sans-serif;
 }
 
-.font-chewy {
-    font-family: "Chewy", cursive;
+.dela {
+    font-family: "Dela Gothic One", sans-serif;
+
+    font-style: normal;
+}
+.mynerve {
+    font-family: "Mynerve", sans-serif;
+
+    font-style: normal;
+}
+
+.roboto {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
 }
 
 .success-message {
@@ -148,7 +160,7 @@ p {
     left: 0;
     height: 100%;
     width: 0;
-    background-color: #7678ed; /* Your desired color */
+    background-color: #7678ed;
     animation: bgTransition 150ms ease-in-out forwards;
-    z-index: -1;
+    z-index: -10;
 }

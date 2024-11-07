@@ -64,7 +64,7 @@ export default function Newsletter() {
         }
     }, [success]);
     return (
-        <div className="bg-[#f7f7f7]  py-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center font-chewy relative">
+        <div className="bg-[#f7f7f7]  py-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center roboto relative">
             {showConfetti && (
                 <div className="absolute top-0 left-0 right-0 w-2/3 -mt-60">
                     <Confetti
@@ -115,9 +115,9 @@ export default function Newsletter() {
                 </div>
             )}
             {error && <div className="mt-2 text-red-600">{error}</div>}
-            <p className="max-w-md mt-4 text-xs text-center text-gray-500">
-                By subscribing, you agree to receive our emails. You can
-                unsubscribe anytime.
+            <p className="max-w-md mt-4 text-xs text-center text-gray-500 mynerve">
+                Με την εγγραφή σας, συμφωνείτε να λαμβάνετε τα email μας.
+                Μπορείτε να διαγραφείτε οποιαδήποτε στιγμή..
             </p>
         </div>
     );

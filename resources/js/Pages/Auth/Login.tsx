@@ -95,22 +95,28 @@ export default function Login({
                     </label>
                 </div>
 
-                <div className="flex items-center justify-end mt-4">
+                <div className="flex items-center justify-end gap-2 mt-4">
                     {canResetPassword && (
                         <Link
                             href={route("password.request")}
-                            className="text-sm text-white underline rounded-md hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                            className="flex-1 text-sm text-white underline rounded-md hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                         >
                             Forgot your password?
                         </Link>
                     )}
 
                     <PrimaryButton
-                        className="ms-4 bg-[#4fd42e]"
+                        className="ms-4 flex-1 text-center bg-[#4fd42e]"
                         disabled={processing}
                     >
-                        Log in
+                        Σύνδεση
                     </PrimaryButton>
+                    <Link
+                        href={route("register")}
+                        className="  flex-1 items-center justify-center rounded-md  border-transparent bg-[#f4bb38] px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out  "
+                    >
+                        Εγγραφή
+                    </Link>
                 </div>
             </form>
         </GuestLayout>
