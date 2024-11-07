@@ -524,7 +524,7 @@ export default function Navigation({ auth }: PageProps) {
                                 </div>
                                 {/* social media icons */}
                                 <div className="flex justify-center flex-1 gap-3 ">
-                                    <div className="flex items-end justify-end gap-2 p-2 mt-2 sm:gap-2 md:gap-4">
+                                    <div className="flex items-center justify-center w-full gap-2 p-2 mt-2 sm:gap-2 md:gap-4">
                                         {/*        <Link
                                             href="https://instagram.com"
                                             target="_blank"
@@ -533,25 +533,28 @@ export default function Navigation({ auth }: PageProps) {
                                             <i className="text-2xl text-pink-600 fab fa-instagram"></i>
                                         </Link> */}
                                         <a
+                                            className="w-[35px] text-center"
                                             href="https://www.facebook.com/profile.php?id=61553477665097"
                                             target="_blank"
                                             aria-label="Facebook"
                                         >
-                                            <i className="text-2xl text-blue-600 fab fa-facebook"></i>
+                                            <i className="w-full text-2xl text-blue-600 bg-white rounded-full fab fa-facebook"></i>
                                         </a>
                                         <a
+                                            className="w-[35px] text-center"
                                             href="https://youtube.com/@mikroimathites?si=aICVMmqpYpCYDD-b"
                                             target="_blank"
                                             aria-label="YouTube"
                                         >
-                                            <i className="text-2xl text-red-600 fab fa-youtube"></i>
+                                            <i className="w-full text-2xl text-red-600 bg-white rounded-full fab fa-youtube"></i>
                                         </a>
                                         <a
+                                            className="w-[35px] text-center"
                                             href="https://www.tiktok.com/@mikroimathites?is_from_webapp=1"
                                             target="_blank"
                                             aria-label="TikTok"
                                         >
-                                            <i className="text-2xl text-black fab fa-tiktok"></i>
+                                            <i className="w-full text-2xl text-black bg-white rounded-full fab fa-tiktok"></i>
                                         </a>
                                     </div>
                                 </div>
