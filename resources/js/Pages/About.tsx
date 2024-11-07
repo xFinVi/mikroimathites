@@ -37,7 +37,7 @@ const About = ({ auth }: PageProps) => {
                 <div className="grid sm:grid-cols-3 xs:grid-cols-2 gap-4 px-4 bg-[#FAF5EF] py-4 xl:grid-cols-3">
                     <div className="w-full h-auto bg-[#ffadad] xs:col-span-2 sm:col-span-1 col-span-2  rounded-xl flex justify-center items-center">
                         <img
-                            src="/Images/victoriaPink.png"
+                            src="/Images/VictoriaPink.png"
                             className="w-full sm:w-[200px] h-auto object-contain"
                             alt=""
                         />
