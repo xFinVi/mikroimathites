@@ -15,7 +15,17 @@ export default function Authenticated({
         useState(false);
 
     return (
-        <div className="min-h-screen bg-[#ffecd1]">
+        <div
+            className="min-h-screen "
+            style={{
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundAttachment: "local",
+
+                backgroundImage: `url('Images/paintbg.jpg')`,
+            }}
+        >
             <nav className="bg-white border-b border-gray-100">
                 <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
@@ -67,14 +77,14 @@ export default function Authenticated({
                                         <Dropdown.Link
                                             href={route("profile.edit")}
                                         >
-                                            Profile
+                                            Προφίλ
                                         </Dropdown.Link>
                                         <Dropdown.Link
                                             href={route("logout")}
                                             method="post"
                                             as="button"
                                         >
-                                            Log Out
+                                            Αποσύνδεση
                                         </Dropdown.Link>
                                     </Dropdown.Content>
                                 </Dropdown>
@@ -130,7 +140,7 @@ export default function Authenticated({
                         " sm:hidden"
                     }
                 >
-                    <div className="pt-2 pb-3 space-y-1">
+                    <div className="pt-2 pb-3 space-y-1 ">
                         <ResponsiveNavLink
                             href={route("dashboard")}
                             active={route().current("dashboard")}
@@ -154,13 +164,13 @@ export default function Authenticated({
                                 className="bg-[#ff723a] text-white"
                                 href={route("profile.edit")}
                             >
-                                Profile
+                                Προφίλ
                             </ResponsiveNavLink>
                             <ResponsiveNavLink
                                 className="bg-[#ffca3a] text-white"
                                 href="/"
                             >
-                                Home
+                                Αρχική
                             </ResponsiveNavLink>
 
                             <ResponsiveNavLink
@@ -190,7 +200,7 @@ export default function Authenticated({
                                 href={route("logout")}
                                 as="button"
                             >
-                                Log Out
+                                Αποσύνδεση
                             </ResponsiveNavLink>
                         </div>
                     </div>
@@ -198,8 +208,8 @@ export default function Authenticated({
             </nav>
 
             {header && (
-                <header className="bg-white shadow">
-                    <div className="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <header className="bg-[f3f3f3] shadow">
+                    <div className="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8  bg-[#ffb879]/90">
                         {header}
                     </div>
                 </header>

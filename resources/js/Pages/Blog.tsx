@@ -19,7 +19,7 @@ const Blog = ({ auth }: PageProps) => {
                     backgroundImage: `url('Images/underconstruction.png')`,
                 }}
             >
-                <h1 className="mt-20 p-6 rounded-xl text-xl xs:text-2xl text-center  md:text-5xl font-bold text-white font-chewy bg-[#F9B000]">
+                <h1 className="mt-20 p-6 rounded-xl text-2xl xs:text-3xl text-center  md:text-5xl font-bold text-white font-chewy bg-[#F9B000]">
                     Περιμένουμε άδεια απο την Πολεοδομία
                     <p className="mt-6 text-2xl text-center">
                         σύντομα κοντά σας

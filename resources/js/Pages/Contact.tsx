@@ -85,7 +85,7 @@ const Contact = ({ auth }: PageProps) => {
             <div
                 className="w-full flex flex-col justify-center items-center md:h-[85vh]  pt-80 sm:mt-20  lg:h-[90vh] xs:h-[90vh] sm:h-[80vh] p-6 py-44 bg-gradient-to-b from-[#fff2da] to-[#F7F7F7]"
                 style={{
-                    backgroundImage: `url('images/nightcont.png')`,
+                    backgroundImage: `url('Images/nightCont.png')`,
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
@@ -101,7 +101,7 @@ const Contact = ({ auth }: PageProps) => {
                 )}
 
                 <div className="w-full p-8 mx-auto bg-white border border-white rounded-lg shadow-lg bg-opacity-70 backdrop-blur-md md:w-3/5 lg:w-2/5">
-                    <h1 className="text-4xl text-center font-chewy text-[#0096CF] w-full py-4 mb-4">
+                    <h1 className="text-4xl text-center font-mynerve text-[#0096CF] w-full py-4 mb-4">
                         Φόρμα επικοινωνίας
                     </h1>
                     <form
@@ -116,7 +116,7 @@ const Contact = ({ auth }: PageProps) => {
                                 {successMessage}
                             </div>
                         )}
-                        <div className="relative z-0 w-full mb-5 group">
+                        <div className="relative z-0 w-full mb-5 group ">
                             <input
                                 type="text"
                                 name="name"

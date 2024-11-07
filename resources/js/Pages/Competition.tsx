@@ -118,9 +118,9 @@ const Competition = ({ auth }: PageProps) => {
 
     return (
         <PageLayout auth={auth}>
-            <Head title="About Us" />
+            <Head title="Διαγωνισμός" />
             <div
-                className="w-full flex flex-col justify-center items-center md:h-[85vh] pt-80 sm:mt-20 sm:py-20 bg-[#4abef0] lg:h-[90vh] xs:h-[100vh] sm:h-[90vh] p-6 py-44 relative "
+                className="w-full flex h-full flex-col justify-center items-start md:h-[85vh] pt-40 sm:mt-20 sm:py-20 bg-[#4abef0] lg:h-[90vh]  p-6 relative "
                 style={{
                     backgroundImage: `url('images/contactfo.png')`,
                     backgroundRepeat: "no-repeat",
@@ -136,16 +136,16 @@ const Competition = ({ auth }: PageProps) => {
                         />
                     </div>
                 )}
-                <div className="p-8 mx-auto bg-white rounded-lg shadow-xl bg-opacity-70 xs:w-full md:w-4/5 lg:w-2/5 max-w-2/5 backdrop-blur-sm xs:m-0">
-                    <h1 className="md:text-4xl xs:text-2xl  text-center font-chewy text-[#fb6f92] w-full py-4 mb-4">
+                <div className="w-full h-full p-6 bg-white rounded-lg shadow-xl md:mx-auto bg-opacity-70 md:w-4/5 lg:w-2/5 backdrop-blur-sm xs:m-0">
+                    <h1 className="md:text-4xl xs:text-3xl md:py-0  text-center mynerve text-[#fb6f92] w-full sm:py-4 p-0 mb-2 ">
                         Δήλωσε τώρα συμμετοχή
                     </h1>
-                    <p className="text-lg text-center text-[#012a4a] font-chewy">
+                    {/* <p className="text-lg text-center text-[#012a4a] font-chewy">
                         Και μπες στην κλήρωση για μια δωροκάρτα 50$
-                    </p>
+                    </p> */}
                     <form
                         onSubmit={handleSubmit}
-                        className="max-w-md py-8 mx-auto font-bold"
+                        className="w-full h-full py-8 mx-auto font-bold "
                     >
                         {error && (
                             <div className="mb-10 text-xl xs:text-lg  font-bold text-white bg-[#f24848] font-fredoka p-4 xs:p-2 rounded-xl">
@@ -263,13 +263,14 @@ const Competition = ({ auth }: PageProps) => {
                                 />
                             </Box>
                         </div>
-
-                        <button
-                            type="submit"
-                            className="text-white bg-[#2fc151]  ffocus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center hover:bg-[#51e073] xs:text-xl "
-                        >
-                            Δήλωσε
-                        </button>
+                        <div className="relative z-0 w-full mb-5 group">
+                            <button
+                                type="submit"
+                                className="text-white bg-[#2fc151]  ffocus:ring-blue-300 font-medium rounded-lg text-sm w-[100%] px-5 py-2.5 text-center hover:bg-[#51e073] xs:text-xl "
+                            >
+                                Δήλωσε
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>

@@ -121,7 +121,7 @@ export default function Navigation({ auth }: PageProps) {
                         </div>
                     </button>
                 </div>
-                <PopoverGroup className="hidden mr-20 lg:flex lg:gap-x-2 font-chewy">
+                <PopoverGroup className="hidden mr-20 lg:flex lg:gap-x-2 ">
                     {/*    <Popover className="relative">
                         <PopoverButton
                             className="flex rounded-md bg-[#E04B3B] hover:bg-[#c53f30]   px-2 py-1 
@@ -197,9 +197,20 @@ export default function Navigation({ auth }: PageProps) {
                     >
                         Βίντεο
                     </Link> */}
+                    <a
+                        href="/"
+                        className="rounded-md bg-[#7d34b2] 
+        px-2 py-0.5 flex items-center
+        text-white lg:text-md
+        
+        transition hover:bg-[#9f51d6] focus:outline-none 
+      "
+                    >
+                        Αρχική
+                    </a>
                     <Link
                         href={route("blog")}
-                        className="rounded-md bg-[#FF575F] 
+                        className="rounded-md bg-[#f27446] 
         px-2 py-0.5 flex items-center
         text-white lg:text-md
         
@@ -353,12 +364,12 @@ export default function Navigation({ auth }: PageProps) {
                 <div className="absolute top-10px sm:-top-[25px] transform  lg:-translate-x-1/2 -translate-x-1/2 left-1/2 lg:-top-[10px]">
                     <Link
                         href="/"
-                        className="flex items-center justify-center  xs:w-[250px] sm:w-[350px] md:w-[350px] lg:w-[250px] "
+                        className="flex items-center justify-center z-[9999]  xs:w-[250px] sm:w-[350px] md:w-[350px] lg:w-[250px] "
                     >
                         <img
-                            src="Images/Logo Mikroi Ma8htes NO Bg .png"
+                            src="Images/Logo Mikroi Ma8htes NO Bg .png "
                             alt="Mikroi Mathites Logo"
-                            className="max-h-[170px]" // Adjust the height as needed
+                            className="max-h-[170px] z-[1050]" // Adjust the height as needed
                         />
                     </Link>
                 </div>
@@ -366,33 +377,32 @@ export default function Navigation({ auth }: PageProps) {
             <Dialog
                 open={mobileMenuOpen}
                 onClose={() => setMobileMenuOpen(false)}
-                className="relative z-[104] lg:hidden"
+                className="relative z-[100] lg:hidden"
             >
-                <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+                <div className="fixed inset-0 z-10 w-screen ">
                     <DialogPanel
                         transition
-                        className="w-full h-[100%]     rounded-xl bg-white/2 p-5 backdrop-blur-3xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0 data-[closed]:w-0"
+                        className="w-full h-[100%] -z-[10]    rounded-xl p-5 backdrop-blur-3xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0 data-[closed]:w-0"
                     >
-                        <div className="flex items-center justify-between">
-                            {/* Button to close the dialog */}
-                            <button
-                                onClick={() => setMobileMenuOpen(!true)}
-                                className={classNames(
-                                    "tham tham-e-squeeze z-[122] tham-w-6 mt-6 ",
-                                    {
-                                        "tham-active": mobileMenuOpen,
-                                    }
-                                )}
-                                aria-label="Toggle menu"
-                            >
-                                <div className="tham-box">
-                                    <div className="tham-inner" />
-                                </div>
-                            </button>
-                        </div>
-                        <div className="flow-root h-full mt-6 ">
-                            <div className="flex flex-col justify-between h-[80%] z-[1040] xs:h-full md:h-[100%]  -my-6 divide-y divide-gray-500/10">
-                                <div className="flex flex-col items-center justify-center gap-2 py-6 mx-auto mt-12 space-y-2 md:w-2/3 h-1/3 xs:w-full xs:h-full font-chewy xs:justify-start">
+                        {/* Button to close the dialog */}
+                        <button
+                            onClick={() => setMobileMenuOpen(!true)}
+                            className={classNames(
+                                "tham tham-e-squeeze  tham-w-6 mt-6 ",
+                                {
+                                    "tham-active": mobileMenuOpen,
+                                }
+                            )}
+                            aria-label="Toggle menu"
+                        >
+                            {/*   <div className="tham-box">
+                                <div className="tham-inner" />
+                            </div> */}
+                        </button>
+
+                        <div className="flow-root mt-6 z-[200] ">
+                            <div className="flex flex-col justify-between h-[80%] z-[890] xs:h-full md:h-[100%]  -my-6 divide-y divide-gray-500/10">
+                                <div className="flex flex-col items-center justify-center gap-2 py-6 mx-auto mt-12 space-y-2 md:w-2/3 h-1/3 xs:w-full xs:h-full mynerve xs:justify-start">
                                     {/* <Disclosure as="div" className="-mx-3">
                                         <DisclosureButton className="group flex w-100 items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base  leading-7 text-gray-900 hover:bg-gray-50">
                                             Product
@@ -416,6 +426,12 @@ export default function Navigation({ auth }: PageProps) {
                                         )}
                                     </Disclosure>
                                     </DisclosurePanel> */}
+                                    <a
+                                        href="/"
+                                        className="block px-3 md:py-2 xs:py-4 text-center -mx-3 text-lg  leading-7 md:w-2/3 xs:w-full text-white bg-[#9031cc] rounded-lg hover:bg-[#7a358a] transition transform duration-150 ease-in-out active:scale-95"
+                                    >
+                                        Αρχική
+                                    </a>
                                     <Link
                                         href={route("video")}
                                         className="block px-3 md:py-2 xs:py-4 text-center -mx-3 text-lg  leading-7 md:w-2/3 xs:w-full text-white bg-[#ff595e] rounded-lg hover:bg-[#7e2c31] transition transform duration-150 ease-in-out active:scale-95"
@@ -473,7 +489,7 @@ export default function Navigation({ auth }: PageProps) {
                                                 <i className="text-xl text-[#1a659e] fas fa-user transition transform duration-150 ease-in-out active:scale-95" />
                                             </button>
                                             {isMenuOpen && (
-                                                <div className="absolute left-1/2 transform -translate-x-1/2 z-30 flex justify-center gap-2 w-[350px] h-[100px] top-14 mx-auto bg-[#FEE4E3] rounded-lg shadow-xl">
+                                                <div className="absolute left-1/2 transform -translate-x-1/2 z-30 flex justify-center gap-2 w-[100%] h-[100px] top-20 mx-auto bg-[#FEE4E3] rounded-lg shadow-xl">
                                                     {auth.user ? (
                                                         <div className="flex items-center justify-center">
                                                             <Link
@@ -559,7 +575,7 @@ export default function Navigation({ auth }: PageProps) {
                                     </div>
                                 </div>
                                 {/* logo mobile */}
-                                <div className="flex items-center max-w-[50%] justify-center mx-auto ">
+                                <div className="flex items-center max-w-[50%]  justify-center mx-auto ">
                                     <Link
                                         href="/"
                                         className="flex items-center justify-center "

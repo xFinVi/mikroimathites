@@ -116,7 +116,7 @@ export default function Register() {
                     />
                 </div>
 
-                <div className="flex items-center justify-end mt-4">
+                <div className="flex items-center justify-center gap-2 mt-4">
                     <Link
                         href={route("login")}
                         className="text-sm text-white underline rounded-md hover:text-[#aacc00] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
@@ -125,11 +125,17 @@ export default function Register() {
                     </Link>
 
                     <PrimaryButton
-                        className="ms-4 bg-[#4fd42e]"
+                        className="ms-4 bg-[#f4bb38]"
                         disabled={processing}
                     >
-                        Register
+                        Εγγραφή
                     </PrimaryButton>
+                    <Link
+                        href={route("login")}
+                        className="  flex-1 ms-4 items-center justify-center rounded-md  border-transparent bg-[#4fd42e] px-4 py-2 text-xs font-bold uppercase tracking-widest text-white transition duration-150 ease-in-out  "
+                    >
+                        Συνδέσου
+                    </Link>
                 </div>
             </form>
         </GuestLayout>

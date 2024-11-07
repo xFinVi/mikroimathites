@@ -105,7 +105,7 @@ export default function Videos() {
                 </div> */}
             </div>
             <div className=" bg-[#FCF9F4] xs:py-12 sm:py-32">
-                <h1 className="font-chewy lg:text-3xl py-10 font-extrabold text-[#364263] text-center text-4xl bg-[#7AD4F0] w-full">
+                <h1 className="mynerve lg:text-3xl py-10 font-extrabold text-[#364263] text-center text-4xl bg-[#7AD4F0] w-full">
                     Δείτε τα βιντεο μας
                 </h1>
                 <div className="max-w-screen-xl p-5 mx-auto sm:p-10 md:p-16">
@@ -140,13 +140,14 @@ export default function Videos() {
                                         href={`https://www.youtube.com/playlist?list=${playlist.id}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="font-semibold text-lg text-center text-[#fff] hover:text-indigo-600 transition duration-500 ease-in-out inline-block min-h-14 w-full font-chewy"
+                                        className="font-semibold text-lg text-center text-[#fff] hover:text-indigo-600 transition duration-500 ease-in-out inline-block min-h-14 w-full "
                                     >
+                                        <span className="roboto"></span>
                                         {playlist.snippet.title}
                                     </a>
                                 </div>
                                 <div className="flex justify-center px-6 py-4">
-                                    <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border text-black border-slate-800 bg-[linear-gradient(110deg,#FFFFFF,45%,#CDECE6,55%,#FFFFFF)] bg-[length:200%_100%] px-6 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 font-fredoka font-bold">
+                                    <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border text-black border-slate-800 bg-[linear-gradient(110deg,#FFFFFF,45%,#CDECE6,55%,#FFFFFF)] bg-[length:200%_100%] px-6 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 mynerve font-bold">
                                         Δείτε τώρα
                                     </button>
                                 </div>

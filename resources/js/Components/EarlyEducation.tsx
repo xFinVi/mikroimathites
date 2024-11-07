@@ -3,7 +3,7 @@ import React from "react";
 const EarlyEducation = () => {
     return (
         <div
-            className="bg-[#FCF9F4] xs xs:h-[80vh] sm:h-[70vh] mb-20 xs:px-6 sm:px-24 flex flex-col items-center gap-5 p-4 lg:flex-row"
+            className="bg-[#FCF9F4] xs xs:h-[80vh] sm:h-[70vh] my-20 xs:px-6 sm:px-24 flex flex-col items-center gap-5 p-4 lg:flex-row"
             style={{
                 backgroundImage: `url('Images/bg.png')`,
                 backgroundRepeat: "no-repeat",
@@ -21,10 +21,10 @@ const EarlyEducation = () => {
             </div>
 
             <div className="flex flex-col items-center flex-1 p-0 space-y-4 w-100 md:p-4">
-                <h1 className="font-chewy xs:text-2xl lg:text-3xl font-extrabold text-[#0B2558] text-center sm:text-lg">
+                <h1 className="mynerve xs:text-2xl lg:text-3xl font-extrabold text-[#0B2558] text-center sm:text-lg">
                     Ξεκινάμε απο νωρίς
                 </h1>
-                <h1 className="font-chewy text-3xl text-center md:text-xl sm:text-lg lg:text-3xl font-extrabold text-[#0B2558]">
+                <h1 className="mynerve text-3xl text-center md:text-xl sm:text-lg lg:text-3xl font-bold text-[#0B2558]">
                     Η Εκπαίδευση Έχει Σημασία
                 </h1>
                 <p className="text-[#555] text-center text-base px-6 sm:px-2 ">

@@ -24,13 +24,13 @@ export default function Hero() {
         >
             {/* Text Content */}
 
-            <div className="z-30 flex flex-col items-center justify-center flex-1 w-full gap-4 text-center p-6font-bold top-1/2 lg:w-2/5 rounded-3xl font-chewy">
-                <h1 className="text-4xl sm:text-7xl md:text-6xl lg:text-7xl font-bold text-[#26536e]">
+            <div className="z-30 flex flex-col items-center justify-center flex-1 w-full gap-4 p-6 text-center roboto top-1/2 lg:w-2/5 rounded-3xl ">
+                <h1 className="text-3xl sm:text-7xl md:text-6xl lg:text-7xl font-bold mynerve   text-[#26536e]">
                     Γειά σας φίλοι μου
                 </h1>
-                <p className="text-xl sm:text-2xl md:text-2xl text-[#26536e] font-semibold px-8 lg:px-0 max-w-[100%] lg:w-2/3  text-center flex justify-center sm:w-full sm:px-2  lg:text-3xl w-full">
+                <p className="text-xl sm:text-2xl md:text-2xl text-[#26536e] tracking-wide mynerve lg:px-0 max-w-[100%] lg:w-2/3  text-center flex justify-center sm:w-full sm:px-2 px-0  lg:text-3xl w-full">
                     Καλωσορίσατε στους Μικρούς μαθητές! Ετοιμαστείτε για έναν
-                    κόσμο γεμάτο παιχνίδι, χαρά και δημιουργικότητα.
+                    κόσμο γεμάτο αγάπη.
                 </p>
             </div>
             <div className="z-40 flex-1 ">

@@ -4,10 +4,10 @@ const OurOffer = () => {
     return (
         <div className="w-full p-6 mx-auto my-20 text-center rounded-lg sm:w-2/3">
             <div className="flex flex-col items-center justify-center pb-4 mx-auto mb-8">
-                <h1 className="text-3xl lg:text-3xl md:text-2xl sm:text-2xl pb-4 mb-6 font-bold w-100 px-6 text-[#0B2558] relative after-line">
+                <h1 className="text-3xl lg:text-3xl md:text-2xl sm:text-2xl pb-4 mb-6 mynerve font-bold w-100 px-6 text-[#0B2558] relative after-line">
                     Τι προσφέρουμε σε εσάς
                 </h1>
-                <p className="relative w-full sm:w-3/4 md:text-lg text-[#112856] sm:text-sm">
+                <p className="relative w-full sm:w-3/4 md:text-lg mynerve text-[#112856] sm:text-sm">
                     Η αποστολή των Μικρών μαθητών είναι να παρέχει ποιοτική
                     πρώιμη εκπαίδευση , πολύ παιχνίδι, διασκέδαση και να κάνει
                     την εκπαίδευση παιχνίδι.
@@ -22,7 +22,7 @@ const OurOffer = () => {
                         src="Images/SVGs-Icons/5.png"
                         alt="Κοινωνική και Συναισθηματική Ανάπτυξη"
                     />
-                    <h2 className="text-xl md:text-xl sm:text-lg font-bold text-[#0B2558] group-hover:text-[#ffb8cb] transition duration-300">
+                    <h2 className="text-xl md:text-xl sm:text-lg font-bold mynerve text-[#0B2558] group-hover:text-[#ffb8cb] transition duration-300">
                         Κοινωνική και Συναισθηματική Ανάπτυξη
                     </h2>
                     <p className="mt-2 text-lg text-center text-[#0b2558a4]">
@@ -37,7 +37,7 @@ const OurOffer = () => {
                         src="Images/SVGs-Icons/6.png"
                         alt="Γλωσσική Ανάπτυξη και Επικοινωνία"
                     />
-                    <h2 className="text-xl md:text-xl sm:text-lg font-bold text-[#0B2558] group-hover:text-[#ffb8cb] transition duration-300">
+                    <h2 className="text-xl md:text-xl sm:text-lg mynerve font-bold text-[#0B2558] group-hover:text-[#ffb8cb] transition duration-300">
                         Γλωσσική Ανάπτυξη και Επικοινωνία
                     </h2>
                     <p className="mt-2 text-lg text-center text-[#0b2558a4]">
@@ -52,7 +52,7 @@ const OurOffer = () => {
                         src="Images/SVGs-Icons/21.png"
                         alt="Κινητικές Δεξιότητες"
                     />
-                    <h2 className="text-xl md:text-xl sm:text-lg font-bold text-[#0B2558] group-hover:text-[#ffb8cb] transition duration-300">
+                    <h2 className="text-xl md:text-xl mynerve sm:text-lg font-bold text-[#0B2558] group-hover:text-[#ffb8cb] transition duration-300">
                         Κινητικές Δεξιότητες
                     </h2>
                     <p className="mt-2 text-lg text-center text-[#0b2558a4]">
@@ -67,7 +67,7 @@ const OurOffer = () => {
                         src="Images/SVGs-Icons/18.png"
                         alt="Γνωστικές Δεξιότητες"
                     />
-                    <h2 className="text-xl md:text-xl sm:text-lg font-bold text-[#0B2558] group-hover:text-[#ffb8cb] transition duration-300">
+                    <h2 className="text-xl md:text-xl mynerve sm:text-lg font-bold text-[#0B2558] group-hover:text-[#ffb8cb] transition duration-300">
                         Γνωστικές Δεξιότητες
                     </h2>
                     <p className="mt-2 text-lg text-center text-[#0b2558a4]">
@@ -82,7 +82,7 @@ const OurOffer = () => {
                         src="Images/SVGs-Icons/19.png"
                         alt="Αισθητηριακή Ανάπτυξη"
                     />
-                    <h2 className="text-xl md:text-xl sm:text-lg font-bold text-[#0B2558] group-hover:text-[#ffb8cb] transition duration-300">
+                    <h2 className="text-xl mynerve md:text-xl sm:text-lg font-bold text-[#0B2558] group-hover:text-[#ffb8cb] transition duration-300">
                         Αισθητηριακή Ανάπτυξη
                     </h2>
                     <p className="mt-2 text-lg text-center text-[#0b2558a4]">
@@ -97,7 +97,7 @@ const OurOffer = () => {
                         src="Images/SVGs-Icons/15.png"
                         alt="Συμβουλές για Γονείς"
                     />
-                    <h2 className="text-xl md:text-xl sm:text-lg font-bold text-[#0B2558] group-hover:text-[#ffb8cb] transition duration-300">
+                    <h2 className="text-xl mynerve md:text-xl sm:text-lg font-bold text-[#0B2558] group-hover:text-[#ffb8cb] transition duration-300">
                         Συμβουλές για Γονείς
                     </h2>
                     <p className="mt-2 text-lg text-center text-[#0b2558a4]">
