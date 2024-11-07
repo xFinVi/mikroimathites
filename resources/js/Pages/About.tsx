@@ -9,7 +9,15 @@ const About = ({ auth }: PageProps) => {
         <PageLayout auth={auth}>
             <Head title="Η ομάδα μας" />
             <div className="w-full   bg-gradient-to-b from-[#fff2da] to-[#F7F7F7] ">
-                <div className="flex relative flex-col items-center justify-center pt-24 xs:pt-36 xs:py-40 mt-20 bg-[url('Images/colorbg.jpg')] bg-cover bg-no-repeat bg-center h-auto">
+                <div
+                    className="relative flex flex-col items-center justify-center h-auto pt-24 mt-20 xs:pt-36 xs:py-40"
+                    style={{
+                        backgroundImage: `url('Images/colorbg.jpg')`,
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                    }}
+                >
                     {/* Main Content */}
                     <div className="p-6 xs:w-full flex-1  font-bold text-[#F27EB1]  bg-white  rounded-md shadow-md text-center">
                         <h2 className="xs:text-4xl sm:text-5xl">
