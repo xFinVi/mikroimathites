@@ -16,7 +16,7 @@ const Blog = ({ auth }: PageProps) => {
                     backgroundRepeat: "no-repeat",
                     backgroundAttachment: "local",
 
-                    backgroundImage: `url('images/underconstruction.png')`,
+                    backgroundImage: `url('Images/underconstruction.png')`,
                 }}
             >
                 <h1 className="mt-20 p-6 rounded-xl text-xl xs:text-2xl text-center  md:text-5xl font-bold text-white font-chewy bg-[#F9B000]">
