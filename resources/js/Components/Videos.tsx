@@ -19,7 +19,7 @@ export default function Videos() {
     const [playlists, setPlaylists] = useState<Playlist[]>([]);
     const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
     const CHANNEL_ID = import.meta.env.VITE_CHANNEL_ID;
-    const [userConsent, setUserConsent] = useState<boolean | null>(null);
+
     const colors = ["#FF9DB7", "#16B2DC", "#FFC66E"];
 
     const promotionalVideo = {
@@ -50,53 +50,9 @@ export default function Videos() {
         fetchPlaylists();
     }, [API_KEY, CHANNEL_ID]);
 
-    useEffect(() => {
-        const consent = localStorage.getItem("userConsent");
-        if (consent) {
-            setUserConsent(consent === "true");
-        }
-    }, []);
-
-    const handleConsent = () => {
-        setUserConsent(true);
-        localStorage.setItem("userConsent", JSON.stringify(true));
-    };
-
-    const handleDecline = () => {
-        setUserConsent(false);
-        localStorage.setItem("userConsent", JSON.stringify(false));
-    };
-
     return (
         <div className="z-10 w-full mx-auto pt-10 bg-[#FCF9F4]">
             <Head title="Video" />
-            {userConsent === null && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-                    <div className="w-full max-w-md p-6 mx-4 text-center bg-white rounded-lg shadow-lg">
-                        <h3 className="mb-4 text-xl font-semibold">
-                            Cookie Consent
-                        </h3>
-                        <p className="mb-6 text-gray-600">
-                            We use cookies to enhance your experience. Do you
-                            consent to the use of cookies?
-                        </p>
-                        <div className="flex justify-center space-x-4">
-                            <button
-                                onClick={handleConsent}
-                                className="px-4 py-2 text-white transition bg-blue-500 rounded-md hover:bg-blue-600"
-                            >
-                                Yes, I Consent
-                            </button>
-                            <button
-                                onClick={handleDecline}
-                                className="px-4 py-2 text-gray-700 transition bg-gray-200 rounded-md hover:bg-gray-300"
-                            >
-                                No, Thanks
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            )}
 
             <div className="grid w-full grid-cols-2 gap-4 px-6 mx-auto sm:w-3/4 place-items-center z-[100] relative ">
                 {/* First Main Card (spans the first column) */}
