@@ -14,7 +14,7 @@ import Review from "@/Components/Review";
 export default function Welcome({ auth }: PageProps) {
     return (
         <PageLayout auth={auth}>
-            <Head title="Welcome" />
+            <Head title="Αρχική" />
             <Hero />
 
             <Videos />

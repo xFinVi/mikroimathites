@@ -81,7 +81,7 @@ const Contact = ({ auth }: PageProps) => {
     }, []);
     return (
         <PageLayout auth={auth}>
-            <Head title="About Us" />
+            <Head title="Επικοινωνία" />
             <div
                 className="w-full flex flex-col justify-center items-center md:h-[85vh]  pt-80 sm:mt-20  lg:h-[90vh] xs:h-[90vh] sm:h-[80vh] p-6 py-44 bg-gradient-to-b from-[#fff2da] to-[#F7F7F7]"
                 style={{

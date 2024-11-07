@@ -52,8 +52,6 @@ export default function Videos() {
 
     return (
         <div className="z-10 w-full mx-auto pt-10 bg-[#FCF9F4]">
-            <Head title="Video" />
-
             <div className="grid w-full grid-cols-2 gap-4 px-6 mx-auto sm:w-3/4 place-items-center z-[100] relative ">
                 {/* First Main Card (spans the first column) */}
                 <div className="z-[1000] col-span-3 md:col-span-1 bg-[#d0bcf1] rounded-lg shadow-md">

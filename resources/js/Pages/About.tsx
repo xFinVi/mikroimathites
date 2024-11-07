@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 const About = ({ auth }: PageProps) => {
     return (
         <PageLayout auth={auth}>
-            <Head title="About Us" />
+            <Head title="Η ομάδα μας" />
             <div className="w-full   bg-gradient-to-b from-[#fff2da] to-[#F7F7F7] ">
                 <div className="flex relative flex-col items-center justify-center pt-24 xs:pt-36 xs:py-40 mt-20 bg-[url('Images/colorbg.jpg')] bg-cover bg-no-repeat bg-center h-auto">
                     {/* Main Content */}
