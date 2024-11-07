@@ -20,12 +20,16 @@ export default function Newsletter() {
                 ?.getAttribute("content") || "";
 
         try {
-            const response = await axios.post("/api/subscribe", email, {
-                headers: {
-                    "Content-Type": "application/json",
-                    "X-CSRF-TOKEN": csrfToken, // Include CSRF token
-                },
-            });
+            const response = await axios.post(
+                "/api/subscribe",
+                { email },
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-CSRF-TOKEN": csrfToken, // Include CSRF token
+                    },
+                }
+            );
 
             if (!response.status) {
                 throw new Error("Failed to subscribe");
