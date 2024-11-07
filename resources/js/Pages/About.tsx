@@ -9,7 +9,7 @@ const About = ({ auth }: PageProps) => {
         <PageLayout auth={auth}>
             <Head title="About Us" />
             <div className="w-full   bg-gradient-to-b from-[#fff2da] to-[#F7F7F7] ">
-                <div className="flex relative flex-col items-center justify-center pt-24 xs:pt-36 xs:py-40 mt-20 bg-[url('/Images/colorbg.jpg')] bg-cover bg-no-repeat bg-center h-auto">
+                <div className="flex relative flex-col items-center justify-center pt-24 xs:pt-36 xs:py-40 mt-20 bg-[url('Images/colorbg.jpg')] bg-cover bg-no-repeat bg-center h-auto">
                     {/* Main Content */}
                     <div className="p-6 xs:w-2/3 font-bold text-[#F27EB1]  bg-white  rounded-md shadow-md text-center">
                         <h2 className="xs:text-lg sm:text-3xl">
@@ -37,7 +37,7 @@ const About = ({ auth }: PageProps) => {
                 <div className="grid sm:grid-cols-3 xs:grid-cols-2 gap-4 px-4 bg-[#FAF5EF] py-4 xl:grid-cols-3">
                     <div className="w-full h-auto bg-[#ffadad] xs:col-span-2 sm:col-span-1 col-span-2  rounded-xl flex justify-center items-center">
                         <img
-                            src="/Images/VictoriaPink.png"
+                            src="Images/VictoriaPink.png"
                             className="w-full sm:w-[200px] h-auto object-contain"
                             alt=""
                         />
@@ -70,7 +70,7 @@ const About = ({ auth }: PageProps) => {
                     <div className="flex items-center justify-center w-full h-auto rounded-xl xs:col-span-2 sm:col-span-1 xs:row-span-2 sm:row-span-1">
                         <div className="w-full h-auto flex-col  bg-[#ee4266] sm:h-[100%]    rounded-xl flex justify-center items-center">
                             <img
-                                src="/Images/brunoBlue.png"
+                                src="Images/brunoBlue.png"
                                 className="object-contain w-full h-auto xs:w-2/3 sm:w-2/3 md:w-2/3"
                                 alt=""
                             />
@@ -82,7 +82,7 @@ const About = ({ auth }: PageProps) => {
                     <div className="flex items-center justify-center w-full h-auto rounded-xl xs:col-span-2 sm:col-span-1 xs:row-span-2 sm:row-span-1">
                         <div className="w-full h-[100%] flex-col  bg-[#4361ee] sm:h-[100%]    rounded-xl flex justify-center items-center">
                             <img
-                                src="/Images/jerry.png"
+                                src="Images/jerry.png"
                                 className="object-contain w-full h-auto xs:w-2/3 sm:w-2/3 md:w-2/3"
                                 alt=""
                             />

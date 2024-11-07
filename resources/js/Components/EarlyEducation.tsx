@@ -5,7 +5,7 @@ const EarlyEducation = () => {
         <div
             className="bg-[#FCF9F4] xs xs:h-[80vh] sm:h-[70vh] mb-20 xs:px-6 sm:px-24 flex flex-col items-center gap-5 p-4 lg:flex-row"
             style={{
-                backgroundImage: `url('images/bg.png')`,
+                backgroundImage: `url('Images/bg.png')`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundPosition: "top center",
@@ -15,7 +15,7 @@ const EarlyEducation = () => {
                 {/* Image */}
                 <img
                     className="object-cover w-full h-full rounded-lg shadow-lg transform transition-transform duration-300 group-hover:scale-105 group-hover:translate-x-[45px] group-hover:translate-y-[45px]"
-                    src="/Images/babyAndmOm.jpg"
+                    src="Images/babyAndmOm.jpg"
                     alt="Baby and a woman playing along"
                 />
             </div>
