@@ -151,7 +151,7 @@ export default function Authenticated({
 
                         <div className="mt-3 space-y-1">
                             <ResponsiveNavLink
-                                className="bg-[#ff595e] text-white"
+                                className="bg-[#ff723a] text-white"
                                 href={route("profile.edit")}
                             >
                                 Profile
@@ -185,7 +185,7 @@ export default function Authenticated({
                                 Διαγωνισμός
                             </ResponsiveNavLink>
                             <ResponsiveNavLink
-                                className="bg-[#ffd6ff] text-black font-bold"
+                                className="bg-[#f32c2c] text-white font-bold"
                                 method="post"
                                 href={route("logout")}
                                 as="button"
