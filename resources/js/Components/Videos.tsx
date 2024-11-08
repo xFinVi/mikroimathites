@@ -108,7 +108,7 @@ export default function Videos() {
                 </h1>
                 <div className="max-w-screen-xl p-5 mx-auto sm:p-10 md:p-16">
                     <div className="grid grid-cols-1 gap-10 md:grid-cols-3 sm:grid-cols-2">
-                        {playlists.slice(0, 3).map((playlist, index) => (
+                        {playlists.slice(0, 7).map((playlist, index) => (
                             <div
                                 key={playlist.id}
                                 className={`rounded overflow-hidden shadow-lg relative ${

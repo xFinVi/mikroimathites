@@ -38,7 +38,7 @@ export default function Hero() {
                 <img
                     src="Images/VictoriaYellow.png"
                     className="h-full  w-[300px] xs:w-[400px]  md:w-[600px]"
-                    alt="Background Stars"
+                    alt="Η δασκάλα Βικτωρία"
                 />
 
                 <script async src="https://www.tiktok.com/embed.js"></script>
@@ -57,7 +57,7 @@ export default function Hero() {
                 <img
                     src="Images/stars-hero.png"
                     className=" top-[170px]  w-full h-full  object-cover transform  left-1/2  xs:left-0"
-                    alt="Balloons"
+                    alt="Φωτογραφία με γραφικά αστεριών"
                 />
             </div>
 

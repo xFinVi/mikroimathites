@@ -3,11 +3,39 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="language" content="el">
+    <meta name="geo.region" content="GR">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="robots" content="index, follow">
 
 
-    <title inertia>{{ config('app.name') }}</title>
+    <meta name="keywords" content="εκπαίδευση, παιδικά βίντεο, μικροί μαθητές, δασκάλα Βικτωρία, δημιουργικότητα">
+
+    <meta name="description"
+        content="Καλώς ήρθατε στην παρέα των Μικρών Μαθητών! Μαθαίνουμε με την κυρία Βικτωρία, μια αληθινή δασκάλα, δημιουργεί βίντεο, παραμύθια και τραγούδια για να μετατρέψει την εκπαίδευση σε παιχνίδι. Εξερευνήστε ένα φιλικό και δημιουργικό περιβάλλον που εμπνέει την περιέργεια και τη μάθηση των παιδιών.">
+
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('site.webmanifest') }}">
+
+
+
+
+    <link rel="canonical" href="https://www.mikroimathites.gr">
+
+    <meta property="og:title" content="{{ config('app.name') }} - Εκπαιδευτικό περιβάλλον για παιδιά">
+    <meta property="og:description"
+        content="Ανακαλύψτε ένα εκπαιδευτικό περιβάλλον που εμπνέει και αναπτύσσει τη δημιουργικότητα των παιδιών.">
+    <meta property="og:image" content="https://www.mikroimathites.gr/path/to/og-image.jpg">
+    <meta property="og:url" content="https://www.mikroimathites.gr">
+    <meta property="og:type" content="website">
+
+
+    <title inertia>{{ config('app.name') }} | Εκπαιδευτικό Περιβάλλον για Παιδιά</title>
+
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -20,6 +48,20 @@
         rel="stylesheet">
 
     <!-- Scripts -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "EducationalOrganization",
+          "name": "Μικροί Μαθητές",
+          "url": "https://www.mikroimathites.gr",
+          "logo": "https://www.mikroimathites.gr/path/to/logo.png",
+          "sameAs": [
+            "https://www.facebook.com/yourpage",
+            "https://www.instagram.com/yourpage"
+          ],
+          "description": "Εκπαιδευτικό περιβάλλον που μετατρέπει την μάθηση σε παιχνίδι με τη βοήθεια της δασκάλας Βικτωρίας."
+        }
+        </script>
     @routes
     @viteReactRefresh
     @vite(['resources/js/app.tsx', "resources/js/Pages/{$page['component']}.tsx"])

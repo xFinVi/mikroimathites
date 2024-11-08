@@ -46,7 +46,7 @@ const About = ({ auth }: PageProps) => {
                         <img
                             src="Images/VictoriaPink.png"
                             className="w-full sm:w-[200px] h-auto object-contain"
-                            alt=""
+                            alt="Η δασκάλα Κυρία Βικτωρία  "
                         />
                     </div>
                     <div className="w-full h-auto col-span-2 sm:col-span-2 bg-[#F898C1]  shadow-md  rounded-xl lg:text-xl flex justify-center roboto items-center sm:px-14 xs:p-6">
@@ -81,7 +81,7 @@ const About = ({ auth }: PageProps) => {
                             <img
                                 src="Images/brunoBlue.png"
                                 className="object-contain w-full h-auto xs:w-2/3 sm:w-2/3 md:w-2/3"
-                                alt=""
+                                alt="ο μπλέ ήρωας Μπρούνο"
                             />
                             <h4 className="pb-6 text-xl text-white lg:text-2xl mynerve ">
                                 Εγώ είμαι ο Μπρούνο
@@ -93,7 +93,7 @@ const About = ({ auth }: PageProps) => {
                             <img
                                 src="Images/jerry.png"
                                 className="object-contain w-full h-auto xs:w-2/3 sm:w-2/3 md:w-2/3"
-                                alt=""
+                                alt="Ο πράσινος ήρωας τζέρι"
                             />
                             <h4 className="flex-1 pb-6 text-xl text-white lg:text-2xl mynerve ">
                                 Εγώ είμαι ο Τζέρι
