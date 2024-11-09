@@ -21,6 +21,7 @@ export default {
             },
             animation: {
                 shimmer: "shimmer 2s linear infinite",
+                "spin-slow": "spin-slow 3s linear infinite", // custom slower spin animation
             },
             keyframes: {
                 shimmer: {
@@ -29,6 +30,15 @@ export default {
                     },
                     to: {
                         backgroundPosition: "-200% 0",
+                    },
+                },
+                "spin-slow": {
+                    // Define a custom slow spin animation
+                    from: {
+                        transform: "rotate(0deg)",
+                    },
+                    to: {
+                        transform: "rotate(360deg)",
                     },
                 },
             },

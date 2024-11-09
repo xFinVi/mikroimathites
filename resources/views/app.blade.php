@@ -2,6 +2,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7e805605-0265-4381-8cfa-18ccbfb09fff"
+        data-blockingmode="auto" type="text/javascript"></script>
+
     <meta charset="utf-8">
     <meta name="language" content="el">
     <meta name="geo.region" content="GR">
@@ -38,8 +41,7 @@
         href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Dela+Gothic+One&family=Gloria+Hallelujah&family=Mynerve&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
 
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7e805605-0265-4381-8cfa-18ccbfb09fff"
-        type="text/javascript"></script>
+
 
     <script id="CookieDeclaration" src="https://consent.cookiebot.com/7e805605-0265-4381-8cfa-18ccbfb09fff/cd.js"
         type="text/javascript" async></script>
