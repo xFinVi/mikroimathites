@@ -38,17 +38,14 @@
         href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Dela+Gothic+One&family=Gloria+Hallelujah&family=Mynerve&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7SPDH74PTE"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7e805605-0265-4381-8cfa-18ccbfb09fff"
+        type="text/javascript"></script>
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'G-7SPDH74PTE');
-    </script>
+    <script id="CookieDeclaration" src="https://consent.cookiebot.com/7e805605-0265-4381-8cfa-18ccbfb09fff/cd.js"
+        type="text/javascript" async></script>
+
+
+
     <script data-cookieconsent="ignore">
         window.dataLayer = window.dataLayer || [];
 
@@ -69,6 +66,38 @@
         gtag("set", "url_passthrough", false);
     </script>
 
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7SPDH74PTE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-7SPDH74PTE');
+    </script>
+
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M5378HLC');
+    </script>
+    <!-- End Google Tag Manager -->
+
 
     <!-- Schema JSON-LD -->
     <script type="application/ld+json">
@@ -85,8 +114,7 @@
           "description": "Εκπαιδευτικό περιβάλλον που μετατρέπει την μάθηση σε παιχνίδι με τη βοήθεια της δασκάλας Βικτωρίας."
         }
     </script>
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7e805605-0265-4381-8cfa-18ccbfb09fff"
-        type="text/javascript" async></script>
+
 
     <!-- Scripts -->
     @routes
@@ -96,6 +124,10 @@
 </head>
 
 <body class="font-sans antialiased">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5378HLC" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     @inertia
 </body>
 
