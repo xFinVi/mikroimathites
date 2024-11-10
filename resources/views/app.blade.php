@@ -2,8 +2,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+
     <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7e805605-0265-4381-8cfa-18ccbfb09fff"
-        data-blockingmode="auto" type="text/javascript"></script>
+        type="text/javascript" async></script>
 
     <meta charset="utf-8">
     <meta name="language" content="el">
@@ -43,9 +44,6 @@
 
 
 
-    <script id="CookieDeclaration" src="https://consent.cookiebot.com/7e805605-0265-4381-8cfa-18ccbfb09fff/cd.js"
-        type="text/javascript" async></script>
-
 
 
     <script data-cookieconsent="ignore">
@@ -68,7 +66,11 @@
         gtag("set", "url_passthrough", false);
     </script>
 
-    <!-- Google Analytics -->
+
+
+
+
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7SPDH74PTE"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -77,8 +79,11 @@
             dataLayer.push(arguments);
         }
         gtag('js', new Date());
+
         gtag('config', 'G-7SPDH74PTE');
     </script>
+
+
 
 
     <!-- Google Tag Manager -->

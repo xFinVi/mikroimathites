@@ -2,7 +2,6 @@
 import { PageProps } from "@/types";
 import { Head } from "@inertiajs/react";
 import PageLayout from "@/Layouts/PageLayout";
-import { useState, useEffect } from "react";
 
 const About = ({ auth }: PageProps) => {
     return (
@@ -103,15 +102,6 @@ const About = ({ auth }: PageProps) => {
                     <div className="w-full h-auto col-span-2  bg-[#FFC078] rounded-xl flex justify-center items-center">
                         {" "}
                         <p className="mt-4 text-sm lg:text-xl text-[#3b246f] roboto sm:px-14 xs:p-6">
-                            {/*   Στόχος μας είναι να καινοτομήσουμε στον ελληνικό
-                            χώρο του YouTube και να βοηθήσουμε τα παιδιά μας να
-                            μάθουν και να ασχοληθούν με εκπαιδευτικό
-                            περιεχόμενο. Κατανοούμε ότι η τεχνολογία μπαίνει στη
-                            ζωή από μικρή ηλικία, γι' αυτό προσπαθούμε να
-                            κάνουμε τους μικρούς μας φίλους να αλληλεπιδρούν με
-                            τα βίντεο και να ενθαρρύνουμε διάφορες τεχνικές
-                            μάθησης, ώστε να απολαμβάνουν την τεχνολογία με
-                            ουσιαστικό τρόπο. */}
                             Οραματιζόμαστε έναν νέο κόσμο μάθησης για τα παιδιά
                             μας στον ελληνικό χώρο του YouTube, όπου η
                             τεχνολογία γίνεται σύμμαχος στη γνώση. Θέλουμε να

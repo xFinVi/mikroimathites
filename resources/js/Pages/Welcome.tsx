@@ -4,6 +4,7 @@ import { Head } from "@inertiajs/react";
 import Hero from "@/Pages/Hero";
 import Videos from "@/Components/Videos";
 import News from "@/Pages/News";
+import ReactCookieBot from "react-cookiebot";
 
 import PageLayout from "@/Layouts/PageLayout";
 import EarlyEducation from "@/Components/EarlyEducation";
