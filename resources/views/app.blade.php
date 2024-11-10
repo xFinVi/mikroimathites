@@ -2,9 +2,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-
+    {{-- 
     <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7e805605-0265-4381-8cfa-18ccbfb09fff"
-        type="text/javascript" async></script>
+        type="text/javascript" async></script> --}}
 
     <meta charset="utf-8">
     <meta name="language" content="el">
