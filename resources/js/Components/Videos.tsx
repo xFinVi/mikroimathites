@@ -145,9 +145,14 @@ export default function Videos() {
                                     </a>
                                 </div>
                                 <div className="flex justify-center px-6 py-4">
-                                    <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border text-black border-slate-800 bg-[linear-gradient(110deg,#FFFFFF,45%,#CDECE6,55%,#FFFFFF)] bg-[length:200%_100%] px-6 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 mynerve font-bold">
+                                    <a
+                                        href={`https://www.youtube.com/playlist?list=${playlist.id}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border text-black border-slate-800 bg-[linear-gradient(110deg,#FFFFFF,45%,#CDECE6,55%,#FFFFFF)] bg-[length:200%_100%] px-6 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 mynerve font-bold"
+                                    >
                                         Δείτε τώρα
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         ))}
