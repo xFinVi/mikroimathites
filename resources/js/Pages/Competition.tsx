@@ -144,13 +144,11 @@ const Competition = ({ auth }: PageProps) => {
                         className="w-full h-full py-8 mx-auto font-bold "
                     >
                         {error && (
-                            <div className="mb-10 text-xl xs:text-lg  font-bold text-white bg-[#f24848] font-fredoka p-4 xs:p-2 rounded-xl">
-                                {error}
-                            </div>
+                            <div className="mt-4 text-red-500">{error}</div>
                         )}
-                        {successMessage && (
-                            <div className="mt-4 text-green-500">
-                                {successMessage}
+                        {success && (
+                            <div className="p-4 mt-4 font-bold text-white bg-green-600 rounded-lg">
+                                {success}
                             </div>
                         )}
                         <div className="relative z-0 w-full mb-5 group ">
