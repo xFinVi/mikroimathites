@@ -9,33 +9,35 @@ export default function Authenticated({
     header,
     children,
 }: PropsWithChildren<{ header?: ReactNode }>) {
+    // Get user information from Inertia.js props
     const user = usePage().props.auth.user;
 
+    // State to manage the visibility of the navigation dropdown on smaller screens
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
 
     return (
         <div
-            className="min-h-screen "
+            className="min-h-screen"
             style={{
                 backgroundPosition: "center",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 backgroundAttachment: "local",
-
-                backgroundImage: `url('Images/paintbg.jpg')`,
+                backgroundImage: `url('Images/paintbg.jpg')`, // Background image for the main container
             }}
         >
+            {/* Navigation bar */}
             <nav className="bg-white border-b border-gray-100">
                 <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
+                        {/* Logo and primary navigation links */}
                         <div className="flex">
                             <div className="flex items-center shrink-0">
                                 <Link href="/">
                                     <ApplicationLogo className="block w-auto text-gray-800 fill-current h-9" />
                                 </Link>
                             </div>
-
                             <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink
                                     href={route("dashboard")}
@@ -46,6 +48,7 @@ export default function Authenticated({
                             </div>
                         </div>
 
+                        {/* User profile dropdown (visible on larger screens) */}
                         <div className="hidden sm:ms-6 sm:flex sm:items-center">
                             <div className="relative ms-3">
                                 <Dropdown>
@@ -56,7 +59,6 @@ export default function Authenticated({
                                                 className="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:text-gray-700 focus:outline-none"
                                             >
                                                 {user.name}
-
                                                 <svg
                                                     className="-me-0.5 ms-2 h-4 w-4"
                                                     xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +74,6 @@ export default function Authenticated({
                                             </button>
                                         </span>
                                     </Dropdown.Trigger>
-
                                     <Dropdown.Content>
                                         <Dropdown.Link
                                             href={route("profile.edit")}
@@ -91,11 +92,12 @@ export default function Authenticated({
                             </div>
                         </div>
 
+                        {/* Hamburger menu for smaller screens */}
                         <div className="flex items-center -me-2 sm:hidden">
                             <button
                                 onClick={() =>
                                     setShowingNavigationDropdown(
-                                        (previousState) => !previousState
+                                        (prev) => !prev
                                     )
                                 }
                                 className="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none"
@@ -106,6 +108,7 @@ export default function Authenticated({
                                     fill="none"
                                     viewBox="0 0 24 24"
                                 >
+                                    {/* Icon toggles between hamburger and close */}
                                     <path
                                         className={
                                             !showingNavigationDropdown
@@ -134,13 +137,14 @@ export default function Authenticated({
                     </div>
                 </div>
 
+                {/* Dropdown menu for smaller screens */}
                 <div
                     className={
                         (showingNavigationDropdown ? "block" : "hidden") +
                         " sm:hidden"
                     }
                 >
-                    <div className="pt-2 pb-3 space-y-1 ">
+                    <div className="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink
                             href={route("dashboard")}
                             active={route().current("dashboard")}
@@ -148,7 +152,6 @@ export default function Authenticated({
                             Dashboard
                         </ResponsiveNavLink>
                     </div>
-
                     <div className="pt-4 pb-1 border-t border-gray-200">
                         <div className="px-4">
                             <div className="text-base font-medium text-gray-800">
@@ -158,7 +161,7 @@ export default function Authenticated({
                                 {user.email}
                             </div>
                         </div>
-
+                        {/* Navigation links */}
                         <div className="mt-3 space-y-1">
                             <ResponsiveNavLink
                                 className="bg-[#ff723a] text-white"
@@ -172,7 +175,6 @@ export default function Authenticated({
                             >
                                 Αρχική
                             </ResponsiveNavLink>
-
                             <ResponsiveNavLink
                                 className="bg-[#8ac926] text-white"
                                 href={route("about")}
@@ -188,7 +190,7 @@ export default function Authenticated({
                                 Επικοινωνία
                             </ResponsiveNavLink>
                             <ResponsiveNavLink
-                                className="bg-[#6a4c93] text-white "
+                                className="bg-[#6a4c93] text-white"
                                 href={route("competition")}
                                 as="button"
                             >
@@ -207,14 +209,16 @@ export default function Authenticated({
                 </div>
             </nav>
 
+            {/* Page header */}
             {header && (
                 <header className="bg-[f3f3f3] shadow">
-                    <div className="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8  bg-[#ffb879]/90">
+                    <div className="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8 bg-[#ffb879]/90">
                         {header}
                     </div>
                 </header>
             )}
 
+            {/* Main content */}
             <main>{children}</main>
         </div>
     );

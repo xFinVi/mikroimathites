@@ -12,7 +12,7 @@ const PageLayout: React.FC<LayoutProps> = ({ auth, children }) => {
     return (
         <>
             <Navigation auth={auth} />
-            <main>{children}</main> {/* This renders the child content */}
+            <main>{children}</main>
             <Footer />
         </>
     );
