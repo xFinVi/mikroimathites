@@ -28,7 +28,7 @@
     <meta name="language" content="el">
     <meta name="geo.region" content="GR">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <meta name="robots" content="index, follow">
     <meta name="keywords" content="εκπαίδευση, παιδικά βίντεο, μικροί μαθητές, δασκάλα Βικτωρία, δημιουργικότητα">
     <meta name="description"
@@ -76,6 +76,26 @@
         gtag('js', new Date());
 
         gtag('config', 'G-7SPDH74PTE');
+    </script>
+
+    <script data-cookieconsent="ignore">
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("consent", "default", {
+            ad_personalization: "denied",
+            ad_storage: "denied",
+            ad_user_data: "denied",
+            analytics_storage: "denied",
+            functionality_storage: "denied",
+            personalization_storage: "denied",
+            security_storage: "granted",
+            wait_for_update: 500,
+        });
+        gtag("set", "ads_data_redaction", true);
+        gtag("set", "url_passthrough", false);
     </script>
 
     <!-- Inertia and Vite setup -->

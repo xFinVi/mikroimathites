@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "@inertiajs/react"; // Change to Inertia Link
 import Newsletter from "./Newsletter";
-import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -37,19 +37,19 @@ const Footer = () => {
                     </p>
                     <div className="flex items-center justify-center gap-6 my-4">
                         <a
-                            href="https://instagram.com"
+                            href="https://www.facebook.com/profile.php?id=61553477665097"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
                             <div className="flex items-center justify-center p-2 transition-shadow duration-300 bg-[#C13584] rounded-full shadow-md hover:shadow-lg">
-                                <FaInstagram
+                                <FaFacebook
                                     className="text-[#fff] hover:scale-110 transition-transform duration-300"
                                     size={24}
                                 />
                             </div>
                         </a>
                         <a
-                            href="https://tiktok.com"
+                            href="https://www.tiktok.com/@mikroimathites?is_from_webapp=1"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -61,7 +61,7 @@ const Footer = () => {
                             </div>
                         </a>
                         <a
-                            href="https://youtube.com"
+                            href="https://youtube.com/@mikroimathites?si=O-22wIg2H9e8F60C"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
