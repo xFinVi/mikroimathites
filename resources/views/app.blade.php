@@ -3,29 +3,25 @@
 
 <head>
 
-    <!-- Google Tag Manager script -->
-    @hasSection('gtm')
-        <script>
-            (function(w, d, s, l, i) {
-                w[l] = w[l] || [];
-                w[l].push({
-                    'gtm.start': new Date().getTime(),
-                    event: 'gtm.js'
-                });
-                var f = d.getElementsByTagName(s)[0],
-                    j = d.createElement(s),
-                    dl = l != 'dataLayer' ? '&l=' + l : '';
-                j.async = true;
-                j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-                f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', 'GTM-M5378HLC');
-        </script>
-    @endif
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M5378HLC');
+    </script>
+    <!-- End Google Tag Manager -->
 
-    {{-- Cookiebot script for cookie consent management --}}
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7e805605-0265-4381-8cfa-18ccbfb09fff"
-        data-blockingmode="auto" type="text/javascript"></script>
 
     <!-- Meta tags for page settings and SEO -->
     <meta charset="utf-8">
@@ -68,26 +64,6 @@
         href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Dela+Gothic+One&family=Gloria+Hallelujah&family=Mynerve&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
 
-    {{-- Cookiebot consent management script --}}
-    <script data-cookieconsent="ignore">
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("consent", "default", {
-            ad_personalization: "denied",
-            ad_storage: "denied",
-            ad_user_data: "denied",
-            analytics_storage: "denied",
-            functionality_storage: "denied",
-            personalization_storage: "denied",
-            security_storage: "granted",
-            wait_for_update: 500,
-        });
-        gtag("set", "ads_data_redaction", true);
-        gtag("set", "url_passthrough", false);
-    </script>
 
     <!-- Google Analytics tracking script -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7SPDH74PTE"></script>
@@ -110,9 +86,10 @@
 </head>
 
 <body class="font-sans antialiased">
-    <!-- Google Tag Manager (noscript fallback) -->
+    <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5378HLC" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- Inertia application -->
     @inertia
 </body>
