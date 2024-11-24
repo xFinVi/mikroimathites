@@ -5,11 +5,11 @@ import PageLayout from "@/Layouts/PageLayout";
 
 const About = ({ auth }: PageProps) => {
     return (
-        <PageLayout auth={auth}>
+        <PageLayout auth={auth} pageTitle="" bgColorClass="bg-[#0097E6]">
             <Head title="Η ομάδα μας" />
             <div className="w-full   bg-gradient-to-b from-[#fff2da] to-[#F7F7F7] ">
                 <div
-                    className="relative flex flex-col items-center justify-center h-auto pt-24 mt-20 xs:pt-36 xs:py-40"
+                    className="relative flex flex-col items-center justify-center h-auto pt-24 xs:pt-36 xs:py-40"
                     style={{
                         backgroundImage: `url('Images/colorbg.jpg')`,
                         backgroundRepeat: "no-repeat",
@@ -18,7 +18,7 @@ const About = ({ auth }: PageProps) => {
                     }}
                 >
                     {/* Main Content */}
-                    <div className="p-6 xs:w-full flex-1  font-bold text-[#F27EB1]  bg-white  rounded-md shadow-md text-center">
+                    <div className="p-6 xs:w-full flex-1   font-bold text-[#F27EB1]  bg-white  rounded-md shadow-md text-center">
                         <h2 className="xs:text-4xl sm:text-5xl">
                             {" "}
                             Η ομάδα μας

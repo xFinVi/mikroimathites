@@ -1,6 +1,7 @@
 import defaultTheme from "tailwindcss/defaultTheme";
 import forms from "@tailwindcss/forms";
-const hamburgers = require("tailwind-hamburgers"); // import the hamburgers plugin
+const hamburgers = require("tailwind-hamburgers");
+const withMT = require("@material-tailwind/react/utils/withMT");
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -9,6 +10,15 @@ export default {
         "./storage/framework/views/*.php",
         "./resources/views/**/*.blade.php",
         "./resources/js/**/*.tsx",
+        "./node_modules/@material-tailwind/react/components/**/*.",
+        "./node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
+    ],
+    safelist: [
+        "bg-[#FFD93D]",
+        "bg-[#6ECFF6]",
+        "bg-[#43B756]",
+        "bg-[#FF6B9C]",
+        "bg-[#FF8C42]",
     ],
     theme: {
         extend: {
@@ -17,7 +27,7 @@ export default {
                 fredoka: ["'Fredoka One'", "sans-serif"],
             },
             screens: {
-                xs: "380px",
+                xs: "400px",
             },
             animation: {
                 shimmer: "shimmer 2s linear infinite",
@@ -44,5 +54,7 @@ export default {
             },
         },
     },
-    plugins: [forms, hamburgers], // include the hamburgers plugin here
+    plugins: [forms, hamburgers],
+
+    // include the hamburgers plugin here
 };

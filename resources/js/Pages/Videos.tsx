@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const Blog = ({ auth }: PageProps) => {
     return (
-        <PageLayout auth={auth}>
+        <PageLayout auth={auth} pageTitle="Βίντεο" bgColorClass="bg-[#0067A9]">
             <Head title="Βίντεο" />
             <div
                 className="h-[80vh] py-20 flex justify-center items-start"

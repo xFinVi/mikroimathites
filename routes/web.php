@@ -45,23 +45,31 @@ Route::get('/dashboard', function () {
 
 // Video page route
 Route::get('/video', function () {
-    return Inertia::render('Videos');
+    return Inertia::render('Videos', [
+        'pageTitle' => 'Video',
+    ]);
 })->name('video');
 
 // About page route
 Route::get('/about', function () {
-    return Inertia::render('About');
-})->name('about');
+    return Inertia::render('About', [
+        'pageTitle' => 'Ποιοι Είμαστε',
+    ]);
+})->name('ΠοιοιΕίμαστε');
 
 // Blog page route
 Route::get('/blog', function () {
-    return Inertia::render('Blog');
+    return Inertia::render('Blog', [
+        'pageTitle' => 'Blog',
+    ]);
 })->name('blog');
 
 // Competition page route (GET)
 Route::get('/competition', function () {
-    return Inertia::render('Competition');
-})->name('competition');
+    return Inertia::render('Competition', [
+        'pageTitle' => 'Διαγωνισμός',
+    ]);
+})->name('Διαγωνισμός');
 
 // Handle competition form submission (POST)
 Route::post('/competition', [FeedbackController::class, 'store']);
@@ -70,13 +78,33 @@ Route::post('/competition', [FeedbackController::class, 'store']);
 Route::post('/contact', [ContactController::class, 'store']);
 
 // Contact page route
+// Contact page route
 Route::get('/contact', function () {
-    return Inertia::render('Contact');
-})->name('contact');
+    return Inertia::render('Contact', [
+        'pageTitle' => 'Επικοινωνια'
+    ]);
+})->name('Επικοινωνία');  // Greek name for the contact route
+Route::get('/printables', function () {
+    $cards = config('cards');
+    return Inertia::render('Printables', [
+        'pageTitle' => 'Δημιουργίες',
+        'cards' => $cards,  // Passing cards to the Inertia page
+    ]);
+})->name('Δημιουργίες');
 
-// Testing route for a generic controller action
-Route::get('/testing', [Controller::class, "store"]);
+Route::get('/printables/{cardId}', function ($cardId) {
+    // Cards data (could be a DB fetch in the future)
+    $cards = config('cards');
 
+    // Find the specific card based on the cardId
+    $card = collect($cards)->firstWhere('id', $cardId);
+
+    return Inertia::render('Craft', [
+
+        'pageTitle' => $card['title'],
+        'card' => $card,  // Passing the selected card to Inertia page
+    ]);
+})->name('craft');
 /* 
 |--------------------------------------------------------------------------
 | Profile Management Routes

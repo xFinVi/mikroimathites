@@ -22,12 +22,20 @@ export default function Videos() {
 
     const colors = ["#FF9DB7", "#16B2DC", "#FFC66E"];
 
-    const promotionalVideo = {
-        id: "9z7R4nYWMME",
-        snippet: {
-            title: "Μαθαίνω Τα Φρούτα με την Βικτωρία | Εκπαιδευτικά Βίντεο | Παιδικά Τραγούδια - Greek Nursery Rhymes",
+    const promotionalVideo = [
+        {
+            id: "9z7R4nYWMME",
+            snippet: {
+                title: "Χριστούγεννα με την Κυρία Βικτωρία και τον Μπρούνο : Τραγούδια Μπισκότα και Χαμένα Δώρα",
+            },
         },
-    };
+        {
+            id: "9z7R4nYWMME32",
+            snippet: {
+                title: "Μαθαίνω Τα Φρούτα με την Βικτωρία | Εκπαιδευτικά Βίντεο | Παιδικά Τραγούδια - Greek Nursery Rhymes",
+            },
+        },
+    ];
 
     useEffect(() => {
         const fetchPlaylists = async () => {
@@ -59,14 +67,16 @@ export default function Videos() {
                         <iframe
                             width="100%"
                             height="315"
-                            src={`https://www.youtube-nocookie.com/embed/${promotionalVideo?.id}`}
-                            title={promotionalVideo.snippet.title}
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        />
+                            src="https://www.youtube-nocookie.com/embed/wClEtMjL7vA?si=CxBPJ7A-3OZXeEBZ"
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen // Corrected attribute name
+                        ></iframe>
                     </div>
                     <span className="block w-full h-6 bg-[#953E94]"></span>
                     <h5 className="mb-2 p-2 text-center text-xl font-light text-[#953E94]">
-                        {promotionalVideo.snippet.title}
+                        {promotionalVideo[0].snippet.title}
                     </h5>
                     <p className="mb-4 text-base text-[#777] text-center">
                         Μαθαίνω με την Βικτωρία
@@ -77,16 +87,16 @@ export default function Videos() {
                         <iframe
                             width="100%"
                             height="315"
-                            src="https://www.youtube.com/embed/Ay-pmyWQa34?si=cBbhX9arRSFCJxoP"
+                            src="https://www.youtube-nocookie.com/embed/9z7R4nYWMME?si=clkA_rrMVBPN6S3a"
                             title="YouTube video player"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; "
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerPolicy="strict-origin-when-cross-origin"
                             allowFullScreen
                         ></iframe>
                     </div>
                     <span className="block w-full h-6 bg-[#953E94]"></span>
                     <h5 className="mb-2 p-2 text-center text-xl font-light text-[#953E94]">
-                        {promotionalVideo.snippet.title}
+                        {promotionalVideo[1].snippet.title}
                     </h5>
                     <p className="mb-4 text-base text-[#777] text-center">
                         Μαθαίνω με την Βικτωρία

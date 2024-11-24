@@ -113,7 +113,11 @@ const Competition = ({ auth }: PageProps) => {
     }, [success]);
 
     return (
-        <PageLayout auth={auth}>
+        <PageLayout
+            auth={auth}
+            pageTitle="Διαγωνισμός"
+            bgColorClass="bg-[#FA539C]"
+        >
             <Head title="Διαγωνισμός" />
             <div
                 className="w-full flex h-full flex-col justify-center items-start md:h-[85vh] pt-40 sm:mt-20 sm:py-20 bg-[#4abef0] lg:h-[90vh]  p-6 relative "
