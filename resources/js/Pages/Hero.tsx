@@ -46,13 +46,13 @@ export default function Hero() {
 
             {/* Balloons (parallax effect based on mouse movement) */}
             <div
-                className="absolute  mx-auto max-w-[100%] xs:w-full h-full pointer-events-none"
-                style={{
+                className="absolute top-0 left-0   mx-auto max-w-[100%]  h-full "
+                /*     style={{
                     transform: `translate(${mousePosition.x * -20}px, ${
                         mousePosition.y * -20
                     }px)`,
                     transition: "transform 0.1s ease-out",
-                }}
+                }} */
             >
                 <img
                     src="Images/stars-hero.png"
