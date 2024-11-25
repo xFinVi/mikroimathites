@@ -78,7 +78,7 @@ const Craft: React.FC<CraftProps> = ({ card, auth }) => {
             </div>
             <div className="flex items-center justify-center w-full my-4">
                 <a
-                    href="/printables"
+                    href="/paidikes-ergasies"
                     className="bg-[#376be2] flex items-center p-3 text-white font-bold mynerve rounded-full gap-2"
                 >
                     <svg
