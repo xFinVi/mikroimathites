@@ -20,7 +20,7 @@ export default function Hero() {
             style={{
                 backgroundImage: `url('Images/bluebg.png')`,
             }}
-            onMouseMove={handleMouseMove}
+            // onMouseMove={handleMouseMove}
         >
             {/* Text Content */}
 

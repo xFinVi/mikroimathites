@@ -247,14 +247,14 @@ export default function Navigation({ auth }: PageProps) {
                                     </Link> */}
                                         <Link
                                             href={route("ΠοιοιΕίμαστε")}
-                                            className="block px-8  xs:w-full xs:py-4 text-center md:py-2 -mx-3 text-lg  leading-7 text-white bg-[#ffca3a] rounded-lg hover:bg-[#f9df5e] transition transform duration-150 ease-in-out active:scale-95"
+                                            className="block px-8 w-full xs:py-4 text-center md:py-2 -mx-3 text-lg  leading-7 text-white bg-[#ffca3a] rounded-lg hover:bg-[#f9df5e] transition transform duration-150 ease-in-out active:scale-95"
                                         >
                                             Ποιοι είμαστε
                                         </Link>
 
                                         <Link
                                             href={route("Επικοινωνία")}
-                                            className="block  xs:w-full xs:py-4
+                                            className="block  w-full xs:py-4
                                     px-8 md:py-2 -mx-3 text-lg text-center
                                     leading-7 text-white bg-[#f99a3a] rounded-lg
                                     hover:bg-[#5cadd0] transition transform

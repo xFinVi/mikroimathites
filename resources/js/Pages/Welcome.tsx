@@ -29,7 +29,7 @@ const craftsData = [
     {
         image: "/Images/xeirotexnies/παιδι.jpeg",
         title: "Όριαν",
-        location: "Ολανδία",
+        location: "Ολλανδία",
     },
 ];
 
