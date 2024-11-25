@@ -56,7 +56,7 @@ export default function Hero() {
             >
                 <img
                     src="Images/stars-hero.png"
-                    className=" top-[170px]  w-full h-full  object-cover transform  left-1/2  xs:left-0"
+                    className="object-cover w-full h-[100%]  "
                     alt="Φωτογραφία με γραφικά αστεριών"
                 />
             </div>
