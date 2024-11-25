@@ -20,7 +20,6 @@ const Printables: React.FC<PrintablesProps> = ({ cards, auth }) => {
 
     const handleSearchSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log("Search for:", searchQuery);
     };
 
     return (
@@ -33,41 +32,34 @@ const Printables: React.FC<PrintablesProps> = ({ cards, auth }) => {
                 <div className="flex flex-col items-center justify-center w-[100%] shadow-lg mynerve">
                     <h1>Ψάξε την εργασία που θέλεις</h1>
                     <div className="flex items-center p-6">
-                        <form
-                            onSubmit={handleSearchSubmit}
-                            className="flex items-center w-full"
-                        >
-                            <div className="relative w-full">
-                                <input
-                                    type="text"
-                                    value={searchQuery}
-                                    onChange={(e) =>
-                                        setSearchQuery(e.target.value)
-                                    }
-                                    className="w-full p-2 pl-8 border rounded-full"
-                                    placeholder="Αναζήτηση..."
-                                />
-                                <button
-                                    type="submit"
-                                    className="absolute right-0 p-2 text-gray-400 transform -translate-y-1/2 top-1/2"
+                        <div className="relative w-full">
+                            <input
+                                type="text"
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                className="w-full p-2 pl-8 border rounded-full"
+                                placeholder="Αναζήτηση..."
+                            />
+                            <button
+                                type="submit"
+                                className="absolute right-0 p-2 text-gray-400 transform -translate-y-1/2 top-1/2"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="w-5 h-5"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth="2"
                                 >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="w-5 h-5"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                        strokeWidth="2"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M10 18a8 8 0 110-16 8 8 0 010 16zm11 0l-6-6"
-                                        />
-                                    </svg>
-                                </button>
-                            </div>
-                        </form>
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M10 18a8 8 0 110-16 8 8 0 010 16zm11 0l-6-6"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -86,7 +78,7 @@ const Printables: React.FC<PrintablesProps> = ({ cards, auth }) => {
                                 className="overflow-hidden bg-transparent rounded-lg"
                             >
                                 <Link
-                                    href={`/printables/${card.id}`}
+                                    href={`/paidikes-ergasies/${card.id}`}
                                     className="block"
                                 >
                                     <img
@@ -95,7 +87,7 @@ const Printables: React.FC<PrintablesProps> = ({ cards, auth }) => {
                                         className="relative w-[350px] h-[180px] xs:h-[150px] sm:h-[200px] bg-center bg-cover shadow-xl transform transition-transform duration-300 ease-in-out hover:scale-105 object-cover"
                                     />
                                 </Link>
-                                <h4 className="p-4 text-lg text-[#1DB6D6] text-center">
+                                <h4 className="p-2 xs:text-sm sm:text-lg  text-[#1DB6D6] text-center">
                                     {card.title}
                                 </h4>
                             </article>

@@ -98,6 +98,21 @@
         gtag("set", "url_passthrough", false);
     </script>
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Μικροί Μαθητές",
+      "url": "https://www.mikroimathites.gr",
+      "logo": "https://www.mikroimathites.gr/path/to/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/mikroimathites",
+        "https://www.instagram.com/mikroimathites"
+      ]
+    }
+    </script>
+
+
     <!-- Inertia and Vite setup -->
     @routes
     @viteReactRefresh

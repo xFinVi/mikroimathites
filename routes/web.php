@@ -84,7 +84,7 @@ Route::get('/contact', function () {
         'pageTitle' => 'Επικοινωνια'
     ]);
 })->name('Επικοινωνία');  // Greek name for the contact route
-Route::get('/printables', function () {
+Route::get('/paidikes-ergasies', function () {
     $cards = config('cards');
     return Inertia::render('Printables', [
         'pageTitle' => 'Δημιουργίες',
@@ -92,7 +92,7 @@ Route::get('/printables', function () {
     ]);
 })->name('Δημιουργίες');
 
-Route::get('/printables/{cardId}', function ($cardId) {
+Route::get('/paidikes-ergasies/{cardId}', function ($cardId) {
     // Cards data (could be a DB fetch in the future)
     $cards = config('cards');
 
