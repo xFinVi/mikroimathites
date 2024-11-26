@@ -18,11 +18,8 @@ const About = ({ auth }: PageProps) => {
                     }}
                 >
                     {/* Main Content */}
-                    <div className="p-6 xs:w-full flex-1   font-bold text-[#F27EB1]  bg-white  rounded-md shadow-md text-center">
-                        <h2 className="xs:text-4xl sm:text-5xl">
-                            {" "}
-                            Η ομάδα μας
-                        </h2>
+                    <div className="p-6 xs:w-full flex-1 mt-10  sm:mt-2 font-bold text-[#F27EB1]  bg-white  rounded-md shadow-md text-center">
+                        <h2 className="text-4xl sm:text-5xl"> Η ομάδα μας</h2>
                         <p className="p-2  xs:text-2xl  sm:text-2xl text-center text-[#7AD4F0] bg-opacity-50">
                             Ελάτε να γνωριστούμε
                         </p>
@@ -49,7 +46,7 @@ const About = ({ auth }: PageProps) => {
                         />
                     </div>
                     <div className="w-full h-auto col-span-2 sm:col-span-2 bg-[#F898C1]  shadow-md  rounded-xl lg:text-xl flex justify-center roboto items-center sm:px-14 xs:p-6">
-                        <p className="mt-4 text-sm lg:text-xl  text-[#073b4c] ">
+                        <p className="mt-4 text-sm  lg:text-xl  px-6 py-2   text-[#073b4c] ">
                             Γεια σας! Είμαι η Κυρια Βικτωρία, μαμά ενός υπέροχου
                             κοριτσιού, που αποτελεί την έμπνευση πίσω από όλο
                             αυτό το έργο. Με πτυχίο στη διδασκαλία της ελληνικής
@@ -62,7 +59,7 @@ const About = ({ auth }: PageProps) => {
                         </p>
                     </div>
                     <div className="w-full h-auto col-span-2   sm:col-span-2 roboto bg-[#93D4BC]  rounded-xl flex justify-center items-center sm:px-14 xs:p-6">
-                        <p className="mt-4 lg:text-xl  text-sm text-[#073b4c] ">
+                        <p className="mt-4 lg:text-xl px-6 py-2    text-sm text-[#073b4c] ">
                             Ο στόχος μας είναι να δημιουργήσουμε μια ασφαλή και
                             χαρούμενη γωνιά για εσάς και τα παιδιά σας, γεμάτη
                             από δημιουργικές δραστηριότητες και όμορφες στιγμές
@@ -75,33 +72,33 @@ const About = ({ auth }: PageProps) => {
                             πολύτιμο χρόνο για γονείς και παιδιά.
                         </p>
                     </div>
-                    <div className="flex items-center justify-center w-full h-auto rounded-xl xs:col-span-2 sm:col-span-1 xs:row-span-2 sm:row-span-1">
-                        <div className="w-full h-auto flex-col  bg-[#ee4266] sm:h-[100%]    rounded-xl flex justify-center items-center">
+                    <div className="flex items-center justify-center w-full h-auto col-span-2 row-span-1 rounded-xl sm:col-span-1 xs:row-span-2 xs:col-span-2 sm:row-span-1">
+                        <div className="w-full h-auto flex-col  bg-[#ee4266] sm:h-[100%]    rounded-xl flex justify-center items-center   ">
                             <img
                                 src="Images/brunoBlue.png"
                                 className="object-contain w-full h-auto xs:w-2/3 sm:w-2/3 md:w-2/3"
                                 alt="ο μπλέ ήρωας Μπρούνο"
                             />
-                            <h4 className="pb-6 text-xl text-white lg:text-2xl mynerve ">
+                            <h4 className="px-2 pb-6 text-xl text-center text-white lg:text-2xl mynerve ">
                                 Εγώ είμαι ο Μπρούνο
                             </h4>
                         </div>
                     </div>
-                    <div className="flex items-center justify-center w-full h-auto rounded-xl xs:col-span-2 sm:col-span-1 xs:row-span-2 sm:row-span-1">
-                        <div className="w-full h-[100%] flex-col  bg-[#4361ee] sm:h-[100%]    rounded-xl flex justify-center items-center">
+                    <div className="flex items-center justify-center w-full h-auto col-span-2 row-span-2 rounded-xl sm:col-span-1 xs:row-span-2 xs:col-span-2 sm:row-span-1">
+                        <div className="w-full h-[100%] flex-col  bg-[#4361ee] sm:h-[100%]    rounded-xl flex justify-center items-center   ">
                             <img
                                 src="Images/jerry.png"
                                 className="object-contain w-full h-auto xs:w-2/3 sm:w-2/3 md:w-2/3"
                                 alt="Ο πράσινος ήρωας τζέρι"
                             />
-                            <h4 className="flex-1 pb-6 text-xl text-white lg:text-2xl mynerve ">
+                            <h4 className="flex-1 px-2 pb-6 text-xl text-center text-white lg:text-2xl mynerve ">
                                 Εγώ είμαι ο Τζέρι
                             </h4>
                         </div>
                     </div>
                     <div className="w-full h-auto col-span-2  bg-[#FFC078] rounded-xl flex justify-center items-center">
                         {" "}
-                        <p className="mt-4 text-sm lg:text-xl text-[#3b246f] roboto sm:px-14 xs:p-6">
+                        <p className="mt-4 text-sm px-6 py-2   lg:text-xl text-[#3b246f] roboto sm:px-14 xs:p-6">
                             Οραματιζόμαστε έναν νέο κόσμο μάθησης για τα παιδιά
                             μας στον ελληνικό χώρο του YouTube, όπου η
                             τεχνολογία γίνεται σύμμαχος στη γνώση. Θέλουμε να
@@ -112,6 +109,25 @@ const About = ({ auth }: PageProps) => {
                             ηλικία, προσπαθούμε να δώσουμε στα παιδιά την
                             ευκαιρία να απολαύσουν τα οφέλη της, αναπτύσσοντας
                             δεξιότητες και φαντασία με χαρά και ασφάλεια.
+                        </p>
+                    </div>
+                    <div className="w-full h-auto col-span-2  bg-[#6ECFF6] rounded-xl flex justify-center items-center">
+                        {" "}
+                        <p className="mt-4 text-sm px-6 py-2   lg:text-xl text-[#3b246f] roboto sm:px-14 xs:p-6">
+                            Η Julia Mour είναι υπεύθυνη για τον ήχο μας και τα
+                            τραγουδάκια. Είναι μουσικός παραγωγός από το 2019,
+                            με πάθος για την τέχνη. Με εμπειρία στο παιδικό
+                            θέατρο και στη δημιουργική απασχόληση σε ωδεία και
+                            μικρές ομάδες, αποφάσισε να διευρύνει τους ορίζοντές
+                            της. Θέλοντας να συνδυάσει τις γνώσεις της,
+                            δημιουργεί περιεχόμενο που εμπνέει και εκπαιδεύει τα
+                            παιδιά μέσω της μουσικής. Πιστεύει ότι η
+                            δημιουργικότητα είναι ένα ισχυρό εργαλείο για την
+                            εξέλιξη και ανάπτυξη τόσο των παιδιών όσο και των
+                            ενηλίκων. Στόχος της είναι να καλλιεργήσει την αγάπη
+                            για τη μουσική και να ενισχύσει τις νοητικές και
+                            πνευματικές δεξιότητες των παιδιών μέσα από τη
+                            δουλειά της.
                         </p>
                     </div>
                 </div>
