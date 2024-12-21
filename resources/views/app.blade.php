@@ -43,6 +43,7 @@
     <link rel="canonical" href="{{ $canonical_url ?? url()->current() }}">
 
 
+
     <!-- Open Graph meta tags for social sharing -->
     <meta property="og:title" content="{{ config('app.name') }} - Εκπαιδευτικό περιβάλλον για παιδιά">
     <meta property="og:description"

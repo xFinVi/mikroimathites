@@ -84,10 +84,10 @@ const Printables: React.FC<PrintablesProps> = ({ cards, auth }) => {
                                     <img
                                         src={card.imgUrl}
                                         alt={card.title}
-                                        className="relative w-[350px] h-[180px] xs:h-[150px] sm:h-[200px] bg-center bg-cover shadow-xl transform transition-transform duration-300 ease-in-out hover:scale-105 object-cover"
+                                        className="relative w-[350px] h-[180px] xs:h-[150px] sm:h-[200px] bg-center bg-contain shadow-xl transform transition-transform duration-300 ease-in-out hover:scale-105 object-contain"
                                     />
                                 </Link>
-                                <h4 className="p-2 xs:text-sm sm:text-lg  text-[#1DB6D6] text-center">
+                                <h4 className="p-2 xs:text-sm sm:text-lg  text-[#1DB6D6] text-center mynerve">
                                     {card.title}
                                 </h4>
                             </article>

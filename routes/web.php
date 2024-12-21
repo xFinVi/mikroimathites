@@ -23,6 +23,11 @@ use App\Http\Middleware\CorsMiddleware;
 */
 
 // Home route: Renders the welcome page with dynamic variables
+
+Route::get('/', function () {
+    return redirect()->to('/');
+});
+
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'), // Checks if login route exists
@@ -32,12 +37,18 @@ Route::get('/', function () {
     ]);
 });
 
+
+
+
+
+Route::get('/test', function () {});
+
 // Dashboard route: Protected by 'auth' and 'verified' middlewares
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-/* 
+/*
 |--------------------------------------------------------------------------
 | General Routes
 |--------------------------------------------------------------------------
@@ -83,12 +94,12 @@ Route::get('/contact', function () {
     return Inertia::render('Contact', [
         'pageTitle' => 'Επικοινωνια'
     ]);
-})->name('Επικοινωνία');  // Greek name for the contact route
+})->name('Επικοινωνία'); // Greek name for the contact route
 Route::get('/paidikes-ergasies', function () {
     $cards = config('cards');
     return Inertia::render('Printables', [
         'pageTitle' => 'Δημιουργίες',
-        'cards' => $cards,  // Passing cards to the Inertia page
+        'cards' => $cards, // Passing cards to the Inertia page
     ]);
 })->name('Δημιουργίες');
 
@@ -102,10 +113,10 @@ Route::get('/paidikes-ergasies/{cardId}', function ($cardId) {
     return Inertia::render('Craft', [
 
         'pageTitle' => $card['title'],
-        'card' => $card,  // Passing the selected card to Inertia page
+        'card' => $card, // Passing the selected card to Inertia page
     ]);
 })->name('craft');
-/* 
+/*
 |--------------------------------------------------------------------------
 | Profile Management Routes
 |--------------------------------------------------------------------------
@@ -124,7 +135,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-/* 
+/*
 |--------------------------------------------------------------------------
 | Newsletter Subscription
 |--------------------------------------------------------------------------

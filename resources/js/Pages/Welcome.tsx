@@ -14,6 +14,7 @@ import Review from "@/Components/Review";
 import CraftsGallery from "@/Components/CraftsGallery";
 import Spinner from "@/Components/Spinner";
 import { useEffect, useState } from "react";
+import Test from "@/Components/Test";
 
 const craftsData = [
     {
