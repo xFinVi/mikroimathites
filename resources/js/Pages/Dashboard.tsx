@@ -5,77 +5,83 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function Dashboard() {
-    const [error, setError] = useState<string>("");
-    const [showConfetti, setShowConfetti] = useState(false);
-    const [successMessage, setSuccessMessage] = useState<string>("");
+  const [error, setError] = useState<string>("");
+  const [showConfetti, setShowConfetti] = useState(false);
+  const [successMessage, setSuccessMessage] = useState<string>("");
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [formData, setFormData] = useState<{
-        name: string;
-        last_name: string;
-        email: string;
-        message: string;
-    }>({
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formData, setFormData] = useState<{
+    name: string;
+    last_name: string;
+    email: string;
+    message: string;
+  }>({
+    name: "",
+    last_name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const message = { ...formData };
+      const csrfToken = document
+        .querySelector('meta[name="csrf-token"]')
+        ?.getAttribute("content");
+      const response = await axios.post("/contact", message, {
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRF-TOKEN": csrfToken || "",
+        },
+      });
+      setSuccessMessage(
+        "Ευχαριστούμε για την επικοινωνία σας. Θα απαντήσουμε σύντομα!"
+      );
+      setError("");
+      setShowConfetti(true);
+      setFormData({
         name: "",
         last_name: "",
         email: "",
         message: "",
-    });
+      });
+    } catch (error) {
+      console.error("Error:", error);
+      setError(
+        "Υπήρξε πρόβλημα με την αποστολή του μηνύματος. Προσπαθήστε ξανά."
+      );
+    }
+  };
+  return (
+    <AuthenticatedLayout
+      header={
+        <h2 className="text-2xl font-semibold leading-tight text-[#3f2b8e]">
+          Dashboard
+        </h2>
+      }
+    >
+      <Head title="Dashboard" />
 
-    const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-    ) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        try {
-            const message = { ...formData };
-            const csrfToken = document
-                .querySelector('meta[name="csrf-token"]')
-                ?.getAttribute("content");
-            const response = await axios.post("/contact", message, {
-                headers: {
-                    "Content-Type": "application/json",
-                    "X-CSRF-TOKEN": csrfToken || "",
-                },
-            });
-            setSuccessMessage(
-                "Ευχαριστούμε για την επικοινωνία σας. Θα απαντήσουμε σύντομα!"
-            );
-            setError("");
-            setShowConfetti(true);
-            setFormData({
-                name: "",
-                last_name: "",
-                email: "",
-                message: "",
-            });
-        } catch (error) {
-            console.error("Error:", error);
-            setError(
-                "Υπήρξε πρόβλημα με την αποστολή του μηνύματος. Προσπαθήστε ξανά."
-            );
-        }
-    };
-    return (
-        <AuthenticatedLayout
-            header={
-                <h2 className="text-2xl font-semibold leading-tight text-[#3f2b8e]">
-                    Dashboard
-                </h2>
-            }
-        >
-            <Head title="Dashboard" />
+      <div className="py-12 bg-[#fff]/90">
+        <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="overflow-hidden shadow-sm sm:rounded-lg">
+            <div className="p-6 text-center text-[#3f2b8e] bg-white font-semibold mynerve">
+              Είσαι συνδεδεμένος!
+            </div>
+            <div className="text-xl text-center ">
+              {" "}
+              <h2>Σύντομα θα προστεθούν νέες δυνατότητες!</h2>
+              <h3>Μείνετε συντονισμένοι</h3>
+            </div>
 
-            <div className="py-12 bg-[#fff]/90">
-                <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    <div className="overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-center text-[#3f2b8e] bg-white font-semibold mynerve">
-                            Είσαι συνδεδεμένος!
-                        </div>
-                        <div>
-                            {/*  <div className="flex justify-center my-4">
+            <div>
+              {/*  <div className="flex justify-center my-4">
                                 <button
                                     onClick={() => setIsModalOpen(true)}
                                     className="px-4 py-2 text-white mynerve bg-[#8a3acf] rounded-lg"
@@ -167,10 +173,10 @@ export default function Dashboard() {
                                     </div>
                                 </div>
                             )} */}
-                        </div>
-                    </div>
-                </div>
             </div>
-        </AuthenticatedLayout>
-    );
+          </div>
+        </div>
+      </div>
+    </AuthenticatedLayout>
+  );
 }

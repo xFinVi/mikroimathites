@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\Admin\CraftController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Middleware\AdminMiddleware;
 use App\Mail\WelcomeNewsletter;
 use App\Models\Feedback;
 use Illuminate\Foundation\Application;
@@ -12,6 +14,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Middleware\CorsMiddleware;
+use App\Models\Craft;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +38,7 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION, // Laravel version
         'phpVersion' => PHP_VERSION, // PHP version
     ]);
-});
+})->name('Αρχική');
 
 
 
@@ -44,9 +47,6 @@ Route::get('/', function () {
 Route::get('/test', function () {});
 
 // Dashboard route: Protected by 'auth' and 'verified' middlewares
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 /*
 |--------------------------------------------------------------------------
@@ -95,27 +95,39 @@ Route::get('/contact', function () {
         'pageTitle' => 'Επικοινωνια'
     ]);
 })->name('Επικοινωνία'); // Greek name for the contact route
-Route::get('/paidikes-ergasies', function () {
-    $cards = config('cards');
-    return Inertia::render('Printables', [
-        'pageTitle' => 'Δημιουργίες',
-        'cards' => $cards, // Passing cards to the Inertia page
-    ]);
-})->name('Δημιουργίες');
 
-Route::get('/paidikes-ergasies/{cardId}', function ($cardId) {
-    // Cards data (could be a DB fetch in the future)
-    $cards = config('cards');
 
-    // Find the specific card based on the cardId
-    $card = collect($cards)->firstWhere('id', $cardId);
 
-    return Inertia::render('Craft', [
 
-        'pageTitle' => $card['title'],
-        'card' => $card, // Passing the selected card to Inertia page
-    ]);
-})->name('craft');
+
+
+
+
+Route::get('/paidikes-ergasies', [CraftController::class, 'index'])->name('Δημιουργίες');
+
+
+Route::get('/paidikes-ergasies/{craft}', [CraftController::class, 'show'])->name('craft');
+
+/*  ERGASIES */
+Route::middleware([AdminMiddleware::class])->group(function () {
+    Route::get('/admin/paidikes-ergasies', [CraftController::class, 'create'])->name('admin.create');
+
+    Route::post('/admin/paidikes-ergasies', [CraftController::class, 'store'])->name('admin.store');;
+
+    Route::get('/paidikes-ergasies/{craft}/edit', [CraftController::class, 'edit'])->name('craft.edit');
+    Route::put('/paidikes-ergasies/{craft}/edit', [CraftController::class, 'update']);
+
+
+    Route::delete('/paidikes-ergasies/{craft}', [CraftController::class, 'destroy'])->name('craft.destroy');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', function () {
+        return Inertia::render('Dashboard');
+    })->middleware(['auth', 'verified'])->name('dashboard');
+});
+
+
 /*
 |--------------------------------------------------------------------------
 | Profile Management Routes
@@ -134,6 +146,10 @@ Route::middleware('auth')->group(function () {
     // Delete profile
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------

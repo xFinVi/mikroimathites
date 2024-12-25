@@ -4,6 +4,7 @@ import NavLink from "@/Components/NavLink";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import { Link, usePage } from "@inertiajs/react";
 import { PropsWithChildren, ReactNode, useState } from "react";
+import { EllipsisVerticalIcon } from "@heroicons/react/24/solid";
 
 export default function Authenticated({
   header,
@@ -38,12 +39,40 @@ export default function Authenticated({
                   <ApplicationLogo className="block w-auto text-gray-800 fill-current h-9" />
                 </Link>
               </div>
-              <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+              <div className="hidden space-x-2 mynerve sm:-my-px sm:ms-10 sm:flex">
                 <NavLink
                   href={route("dashboard")}
                   active={route().current("dashboard")}
                 >
                   Dashboard
+                </NavLink>
+                <NavLink
+                  className="rounded-md mynerve px-4 py-1.5 flex items-center text-[#b15eec] lg:text-md transition hover:bg-[#9f51d6] font-bold focus:outline-none"
+                  href={route("Αρχική")}
+                  active={route().current("Αρχική")}
+                >
+                  Αρχική
+                </NavLink>
+                <NavLink
+                  className="rounded-lg mynerve px-4 py-1.5  flex items-center text-[#e82828fa] lg:text-md transition hover:bg-[#ffc31e] focus:outline-none"
+                  href={route("Δημιουργίες")}
+                  active={route().current("Δημιουργίες")}
+                >
+                  Δημιουργίες
+                </NavLink>
+                <NavLink
+                  className="rounded-lg mynerve px-4 py-1.5  flex items-center text-[#0084DA] lg:text-md transition hover:bg-[#ffc31e] focus:outline-none"
+                  href={route("ΠοιοιΕίμαστε")}
+                  active={route().current("ΠοιοιΕίμαστε")}
+                >
+                  Ποιοι είμαστε
+                </NavLink>
+                <NavLink
+                  className="rounded-lg mynerve  px-4 py-1.5  text-[#54c22f] lg:text-md transition hover:bg-[#fe7171] focus:outline-none flex items-center"
+                  href={route("Επικοινωνία")}
+                  active={route().current("Επικοινωνία")}
+                >
+                  Επικοινωνία
                 </NavLink>
               </div>
             </div>
@@ -58,18 +87,15 @@ export default function Authenticated({
                         type="button"
                         className="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:text-gray-700 focus:outline-none"
                       >
-                        {user.name}
                         <svg
-                          className="-me-0.5 ms-2 h-4 w-4"
                           xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
                           fill="currentColor"
+                          viewBox="0 0 24 24"
+                          className="w-5 h-5 text-gray-500"
                         >
-                          <path
-                            fillRule="evenodd"
-                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clipRule="evenodd"
-                          />
+                          <circle cx="12" cy="5" r="2" />
+                          <circle cx="12" cy="12" r="2" />
+                          <circle cx="12" cy="19" r="2" />
                         </svg>
                       </button>
                     </span>
@@ -160,6 +186,13 @@ export default function Authenticated({
               </ResponsiveNavLink>
               <ResponsiveNavLink className="bg-[#ffca3a] text-white" href="/">
                 Αρχική
+              </ResponsiveNavLink>
+
+              <ResponsiveNavLink
+                className="bg-[#9e3bf5] text-white"
+                href={route("Δημιουργίες")}
+              >
+                Δημιουργίες
               </ResponsiveNavLink>
               <ResponsiveNavLink
                 className="bg-[#8ac926] text-white"

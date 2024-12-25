@@ -1,14 +1,32 @@
 export interface User {
-    id: number;
-    name: string;
-    email: string;
-    email_verified_at?: string;
+  id: number;
+  name: string;
+  email: string;
+  email_verified_at?: string;
+  permissions: string[];
+  roles: string[];
+}
+
+export type Auth = {
+  user: {
+    data: User;
+  };
+};
+
+export type PaginatedData<T = any> = {
+  data: T[];
+};
+
+interface Craft {
+  id: number;
+  title: string;
+  description: string;
+  img_url: string;
+  pdf_url: string;
 }
 
 export type PageProps<
-    T extends Record<string, unknown> = Record<string, unknown>,
+  T extends Record<string, unknown> = Record<string, unknown>
 > = T & {
-    auth: {
-        user: User;
-    };
+  auth: Auth;
 };

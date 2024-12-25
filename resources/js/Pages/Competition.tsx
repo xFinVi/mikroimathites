@@ -29,10 +29,14 @@ const Competition = ({ auth }: PageProps) => {
   });
 
   useEffect(() => {
-    const tokenElement = document.querySelector('meta[name="csrf-token"]');
+    // Get CSRF token from the meta tag
+    const token = document
+      .querySelector('meta[name="csrf-token"]')
+      ?.getAttribute("content");
 
-    if (tokenElement) {
-      const token = tokenElement.getAttribute("content");
+    if (token) {
+      setCsrfToken(token);
+      // Set it as the default header for axios requests
       axios.defaults.headers.common["X-CSRF-TOKEN"] = token;
     } else {
       console.error("CSRF token not found");

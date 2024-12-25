@@ -41,6 +41,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
     <link rel="manifest" href="{{ asset('site.webmanifest') }}">
     <link rel="canonical" href="{{ $canonical_url ?? url()->current() }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 
 
 
