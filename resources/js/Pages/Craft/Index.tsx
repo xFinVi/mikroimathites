@@ -50,12 +50,14 @@ const Index: React.FC<PageProps<{ crafts: PaginatedData<Craft> }>> = ({
               </button>
             </div>
             <div>
-              <Link
-                className="relative w-full bg-[#3d59f5] flex items-center p-2 text-white font-bold mynerve rounded-full gap-2"
-                href="/admin/paidikes-ergasies"
-              >
-                Προσθήκη
-              </Link>
+              {auth.isAdmin && (
+                <Link
+                  className="relative w-full bg-[#3d59f5] flex items-center p-2 text-white font-bold mynerve rounded-full gap-2"
+                  href="/admin/paidikes-ergasies"
+                >
+                  Προσθήκη
+                </Link>
+              )}
             </div>
           </div>
         </div>

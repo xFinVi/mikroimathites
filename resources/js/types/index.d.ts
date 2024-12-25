@@ -5,13 +5,13 @@ export interface User {
   email_verified_at?: string;
   permissions: string[];
   roles: string[];
-  isAdmin: boolean;
 }
 
 export type Auth = {
   user: {
     data: User;
   };
+  isAdmin: boolean; // Add the isAdmin field here at the top level of Auth
 };
 
 export type PaginatedData<T = any> = {

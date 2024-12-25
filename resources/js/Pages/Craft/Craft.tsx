@@ -63,7 +63,7 @@ const CraftItem: React.FC<PageProps<{ craft: Craft }>> = ({ craft, auth }) => {
                   {craft.title}
                 </h1>
               </div>
-              {auth.user.data.isAdmin && (
+              {auth.isAdmin && (
                 <div>
                   <Dropdown>
                     <Dropdown.Trigger>
