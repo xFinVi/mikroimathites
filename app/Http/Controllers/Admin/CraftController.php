@@ -83,49 +83,47 @@ class CraftController extends Controller
 
 
 
-    public function update(Request $request, Craft $craft)
+    public function update(Request $request, Craft $craft) //+
     {
 
 
         $validatedData = $request->validate([
             'title' => 'nullable|string|max:255',
             'description' => 'nullable|string',
-            'img_url' => 'nullable|image|max:2048', // Ensure the image is valid
-            'pdf_url' => 'nullable|mimes:pdf|max:10240', // Ensure the PDF is valid
+            'img_url' => 'nullable|image|max:2048',
+            'pdf_url' => 'nullable|mimes:pdf|max:10240',
         ]);
 
 
 
 
-
-
-        // Store paths of the old files for deletion
+        // Store paths of the old files for deletion//-
         $oldImgPath = $craft->img_url ? str_replace('public/', '', $craft->img_url) : null;
         $oldPdfPath = $craft->pdf_url ? str_replace('public/', '', $craft->pdf_url) : null;
 
 
-
-
-
-        // Handle image update
+        // Handle image update//-
         if ($request->hasFile('img_url')) {
-            // Delete old image if exists
+            // Delete old image if exists//-
             if ($oldImgPath) {
-                Storage::delete($oldImgPath); // Deletes from 'storage/app/public'
+                Storage::delete($oldImgPath); // Deletes from 'storage/app/public'//-
+                Storage::delete($oldImgPath); //+
                 $publicOldImgPath = public_path('storage/' . $oldImgPath);
                 if (File::exists($publicOldImgPath)) {
-                    File::delete($publicOldImgPath); // Deletes from 'public/storage'
+                    File::delete($publicOldImgPath); // Deletes from 'public/storage'//-
+                    File::delete($publicOldImgPath); //+
                 }
             }
 
-            // Store new image and save the relative path
+            // Store new image and save the relative path//-
             $newImagePath = $request->file('img_url')->store('craft_images', 'public');
-            $validatedData['img_url'] = $newImagePath; // Ensure this is saved correctly
+            $validatedData['img_url'] = $newImagePath; // Ensure this is saved correctly//-
+            $validatedData['img_url'] = $newImagePath; //+
         }
 
-        // Handle PDF update
+        // Handle PDF update//-
         if ($request->hasFile('pdf_url')) {
-            // Delete old PDF if exists
+            // Delete old PDF if exists//-
             if ($oldPdfPath) {
                 Storage::delete($oldPdfPath);
                 $publicOldPdfPath = public_path('storage/' . $oldPdfPath);
@@ -134,19 +132,21 @@ class CraftController extends Controller
                 }
             }
 
-            // Store new PDF
+            // Store new PDF//-
             $newPdfPath = $request->file('pdf_url')->store('craft_pdfs', 'public');
             $validatedData['pdf_url'] = $newPdfPath;
         }
 
-        // Save the updated craft record
         $craft->update($validatedData);
 
-        // Redirect or return response
-        return redirect()->route('Δημιουργίες')->with('success', 'Craft updated successfully');
+        // Redirect or return response//-
+        return response()->json([
+            'success' => true,
+            'message' => 'Craft updated successfully',
+            'craft' => $craft,
+            'redirectUrl' => route('craft.show', ['craft' => $craft->id]), //+
+        ]);
     }
-
-
 
 
 

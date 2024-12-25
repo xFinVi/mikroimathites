@@ -22,13 +22,11 @@ const AddCraft = ({ auth }: PageProps) => {
       const token = tokenElement.getAttribute("content");
       setCsrfToken(token || "");
       axios.defaults.headers.common["X-CSRF-TOKEN"] = token;
+      axios.defaults.headers.common["X-CSRF-TOKEN"] = csrfToken;
     } else {
       console.error("CSRF token not found");
     }
   }, []);
-
-  // Handle form submission
-  console.log(csrfToken);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -50,8 +48,8 @@ const AddCraft = ({ auth }: PageProps) => {
         formDataToSend,
         {
           headers: {
-            "Content-Type": "multipart/form-data",
             "X-CSRF-TOKEN": csrfToken,
+            "Content-Type": "multipart/form-data",
           },
         }
       );

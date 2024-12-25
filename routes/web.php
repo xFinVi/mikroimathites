@@ -100,14 +100,10 @@ Route::get('/contact', function () {
 
 
 
-
-
-
 Route::get('/paidikes-ergasies', [CraftController::class, 'index'])->name('Δημιουργίες');
 
 
-Route::get('/paidikes-ergasies/{craft}', [CraftController::class, 'show'])->name('craft');
-
+Route::get('/paidikes-ergasies/{craft}', [CraftController::class, 'show'])->name('craft.show');
 /*  ERGASIES */
 Route::middleware([AdminMiddleware::class])->group(function () {
     Route::get('/admin/paidikes-ergasies', [CraftController::class, 'create'])->name('admin.create');

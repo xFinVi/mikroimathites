@@ -20,7 +20,8 @@ const EditCraft: React.FC<PageProps<{ craft: Craft }>> = ({ auth, craft }) => {
     if (tokenElement) {
       const token = tokenElement.getAttribute("content");
       setCsrfToken(token || "");
-      axios.defaults.headers.common["X-CSRF-TOKEN"] = token;
+      axios.defaults.headers.common["X-CSRF-TOKEN"] = token || "";
+      console.log(token);
     } else {
       console.error("CSRF token not found");
     }
@@ -28,6 +29,48 @@ const EditCraft: React.FC<PageProps<{ craft: Craft }>> = ({ auth, craft }) => {
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [successMessage, setSuccessMessage] = useState<string>("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const formDataToSend = new FormData();
+    formDataToSend.append("_method", "PUT");
+    formDataToSend.append("title", formData.title || "");
+    formDataToSend.append("description", formData.description || "");
+    if (formData.img_url) {
+      formDataToSend.append("img_url", formData.img_url);
+    }
+    if (formData.pdf_url) {
+      formDataToSend.append("pdf_url", formData.pdf_url);
+    }
+    for (var pair of formDataToSend.entries()) {
+      console.log(pair[0] + ", " + pair[1]);
+    }
+    try {
+      const response = await axios.post(
+        `/paidikes-ergasies/${craft.id}/edit`,
+        formDataToSend,
+        {
+          headers: {
+            "X-CSRF-TOKEN": csrfToken,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log(response);
+      if (response.status === 200) {
+        setSuccessMessage("Η εργασία ενημερώθηκε με επιτυχία!");
+        setErrors({});
+        window.location.href = response.data.redirectUrl;
+      }
+    } catch (error) {
+      if (error instanceof AxiosError && error.response?.data?.errors) {
+        setErrors(error.response.data.errors);
+      } else {
+        setErrors({ general: "Κάτι πήγε στραβά. Παρακαλώ προσπαθήστε ξανά." });
+      }
+    }
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -45,44 +88,6 @@ const EditCraft: React.FC<PageProps<{ craft: Craft }>> = ({ auth, craft }) => {
       }
     } else {
       setFormData({ ...formData, [name]: value });
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const formDataToSend = new FormData();
-    formDataToSend.append("_method", "PUT"); // Include the method override
-    formDataToSend.append("title", formData.title || "");
-    formDataToSend.append("description", formData.description || "");
-    if (formData.img_url) {
-      formDataToSend.append("img_url", formData.img_url);
-    }
-    if (formData.pdf_url) {
-      formDataToSend.append("pdf_url", formData.pdf_url);
-    }
-    try {
-      const response = await axios.put(
-        `/paidikes-ergasies/${craft.id}/edit`,
-        formDataToSend,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-            "X-CSRF-TOKEN": csrfToken,
-          },
-        }
-      );
-      console.log(response);
-      if (response.status === 200) {
-        setSuccessMessage("Η εργασία ενημερώθηκε με επιτυχία!");
-        setErrors({});
-        window.location.href = route("Δημιουργίες");
-      }
-    } catch (error) {
-      if (error instanceof AxiosError && error.response?.data?.errors) {
-        setErrors(error.response.data.errors);
-      } else {
-        setErrors({ general: "Κάτι πήγε στραβά. Παρακαλώ προσπαθήστε ξανά." });
-      }
     }
   };
 
