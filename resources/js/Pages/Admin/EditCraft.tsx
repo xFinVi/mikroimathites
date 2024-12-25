@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Head, usePage } from "@inertiajs/react"; // Assuming you want to use usePage for route helper
+import { AxiosError } from "axios";
+
 import PageLayout from "@/Layouts/PageLayout";
 import { PageProps, Craft } from "@/types";
 
@@ -63,7 +65,7 @@ const EditCraft: React.FC<PageProps<{ craft: Craft }>> = ({ auth, craft }) => {
         window.location.href = route("Δημιουργίες");
       }
     } catch (error) {
-      if (error.response && error.response.data.errors) {
+      if (error instanceof AxiosError && error.response?.data?.errors) {
         setErrors(error.response.data.errors);
       } else {
         setErrors({ general: "Κάτι πήγε στραβά. Παρακαλώ προσπαθήστε ξανά." });
