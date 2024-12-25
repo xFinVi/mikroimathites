@@ -89,12 +89,12 @@ export default function Navigation({ auth }: PageProps) {
               >
                 Δημιουργίες
               </Link>
-              <Link
+              {/*      <Link
                 href={route("blog")}
                 className="rounded-lg bg-[#0084DA] px-4 py-1.5  flex items-center text-white lg:text-md transition hover:bg-[#ffc31e] focus:outline-none"
               >
                 Blog
-              </Link>
+              </Link> */}
               <Link
                 href={route("ΠοιοιΕίμαστε")}
                 className="rounded-lg bg-[#43B756] px-4 py-1.5  flex items-center text-white lg:text-md transition hover:bg-[#308184] focus:outline-none"
