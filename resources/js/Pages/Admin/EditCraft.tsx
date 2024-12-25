@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Head, usePage } from "@inertiajs/react"; // Assuming you want to use usePage for route helper
 import { AxiosError } from "axios";
@@ -7,12 +7,24 @@ import PageLayout from "@/Layouts/PageLayout";
 import { PageProps, Craft } from "@/types";
 
 const EditCraft: React.FC<PageProps<{ craft: Craft }>> = ({ auth, craft }) => {
+  const [csrfToken, setCsrfToken] = useState<string>("");
   const [formData, setFormData] = useState({
     title: craft.title || "",
     description: craft.description || "",
     img_url: null as File | null,
     pdf_url: null as File | null,
   });
+
+  useEffect(() => {
+    const tokenElement = document.querySelector('meta[name="csrf-token"]');
+    if (tokenElement) {
+      const token = tokenElement.getAttribute("content");
+      setCsrfToken(token || "");
+      axios.defaults.headers.common["X-CSRF-TOKEN"] = token;
+    } else {
+      console.error("CSRF token not found");
+    }
+  }, []);
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [successMessage, setSuccessMessage] = useState<string>("");
@@ -55,6 +67,7 @@ const EditCraft: React.FC<PageProps<{ craft: Craft }>> = ({ auth, craft }) => {
         {
           headers: {
             "Content-Type": "multipart/form-data",
+            "X-CSRF-TOKEN": csrfToken,
           },
         }
       );
