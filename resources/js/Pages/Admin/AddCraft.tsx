@@ -28,6 +28,7 @@ const AddCraft = ({ auth }: PageProps) => {
   }, []);
 
   // Handle form submission
+  console.log(csrfToken);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

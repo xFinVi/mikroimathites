@@ -61,7 +61,7 @@ const EditCraft: React.FC<PageProps<{ craft: Craft }>> = ({ auth, craft }) => {
       formDataToSend.append("pdf_url", formData.pdf_url);
     }
     try {
-      const response = await axios.post(
+      const response = await axios.put(
         `/paidikes-ergasies/${craft.id}/edit`,
         formDataToSend,
         {
