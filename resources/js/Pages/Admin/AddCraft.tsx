@@ -50,6 +50,7 @@ const AddCraft = ({ auth }: PageProps) => {
         {
           headers: {
             "Content-Type": "multipart/form-data",
+            "X-CSRF-TOKEN": csrfToken,
           },
         }
       );

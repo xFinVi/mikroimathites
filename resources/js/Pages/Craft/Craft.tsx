@@ -1,6 +1,6 @@
 // src/Pages/CraftItem.tsx
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { PageProps, Craft } from "@/types";
 import PageLayout from "@/Layouts/PageLayout";
 import axios from "axios";
@@ -17,19 +17,28 @@ const randomNumber = Math.floor(Math.random() * kidsColorPalette.length);
 let dynamicBgClass = `bg-[${kidsColorPalette[randomNumber]}]`;
 
 const CraftItem: React.FC<PageProps<{ craft: Craft }>> = ({ craft, auth }) => {
-  console.log(auth);
-  const token = document
-    .querySelector('meta[name="csrf-token"]')
+  const [csrfToken, setCsrfToken] = useState<string>("");
 
-    ?.getAttribute("content");
-  if (token) {
-    axios.defaults.headers.common["X-CSRF-TOKEN"] = token;
-  }
+  useEffect(() => {
+    const tokenElement = document.querySelector('meta[name="csrf-token"]');
+    if (tokenElement) {
+      const token = tokenElement.getAttribute("content");
+      setCsrfToken(token || "");
+      axios.defaults.headers.common["X-CSRF-TOKEN"] = token;
+    } else {
+      console.error("CSRF token not found");
+    }
+  }, []);
 
   const handleDelete = async () => {
     if (window.confirm("Are you sure you want to delete this craft?")) {
       try {
-        const response = await axios.delete(`/paidikes-ergasies/${craft.id}`);
+        const response = await axios.delete(`/paidikes-ergasies/${craft.id}`, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            "X-CSRF-TOKEN": csrfToken,
+          },
+        });
         console.log("Response:", response);
         window.location.href = response.data.redirectUrl; // You may want to use a different approach here (like updating the state or using `window.location.replace()`)
       } catch (error) {
