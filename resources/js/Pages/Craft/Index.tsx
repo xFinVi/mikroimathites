@@ -14,7 +14,7 @@ const Index: React.FC<PageProps<{ crafts: PaginatedData<Craft> }>> = ({
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
   };
-
+console.log(crafts);
   return (
     <PageLayout auth={auth} pageTitle="Δημιουργίες" bgColorClass="bg-[#f3f6]">
       <div className="flex flex-col items-center justify-center gap-4 py-6 bg-[#FFFEF5]">
