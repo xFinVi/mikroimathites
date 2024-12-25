@@ -170,10 +170,10 @@ export default function Authenticated({
           <div className="pt-4 pb-1 border-t border-gray-200">
             <div className="px-4">
               <div className="text-base font-medium text-gray-800">
-                {user.name}
+                {user.data.name}
               </div>
               <div className="text-sm font-medium text-gray-500">
-                {user.email}
+                {user.data.email}
               </div>
             </div>
             {/* Navigation links */}
