@@ -107,69 +107,60 @@ export default function Navigation({ auth }: PageProps) {
               >
                 Επικοινωνία
               </Link>
-
-              {auth.user ? (
-                <Link
-                  href={route("dashboard")}
-                  aria-label="Dashboard"
-                  className="text-gray-700 transition duration-150 ease-in-out transform hover:text-gray-900 active:scale-95"
-                >
-                  <i className="text-xl text-black fas fa-user" />
-                </Link>
-              ) : (
-                <div className="relative flex  items-center gap-4 bg-[#b2f7ef] w-full justify-center px-3 xs:w-full  xs:py-4 md:py-2 rounded-lg ">
-                  <span className="text-lg font-chewy text-[#1a659e]">
-                    Λογαριασμός
-                  </span>
-                  <button
-                    onClick={() => setMenuOpen(!isMenuOpen)}
+              <div>
+                {" "}
+                {auth.user ? (
+                  <Link
+                    href={route("dashboard")}
+                    aria-label="Dashboard"
                     className="text-gray-700 transition duration-150 ease-in-out transform hover:text-gray-900 active:scale-95"
                   >
-                    <i className="text-xl text-[#1a659e] fas fa-user transition transform duration-150 ease-in-out active:scale-95" />
-                  </button>
-                  {isMenuOpen && (
-                    <div className="absolute left-1/2 transform -translate-x-1/2 z-30 flex justify-center gap-2 w-[100%] h-[100px] top-20 mx-auto bg-[#FEE4E3] rounded-lg shadow-xl">
-                      {auth.user ? (
-                        <div className="flex items-center justify-center">
-                          <Link
-                            href={route("dashboard")}
-                            className="rounded-md px-2 py-1 bg-[#78BBC9] text-white transition hover:bg-[#FF2D20] "
-                          >
-                            Dashboard
-                          </Link>
-                        </div>
-                      ) : (
-                        <div className="flex items-center justify-center gap-2">
-                          <Link
-                            href={route("login")}
-                            className=" rounded-md  px-2 py-1 
-                sm:px-2 sm:py-1 
-                md:px-4 md:py-1 /
-                text-white text-xl  
-                  bg-[#58A8AB]  hover:bg-[#4E9F9D] "
-                          >
-                            Log in
-                          </Link>
-                          <Link
-                            href={route("register")}
-                            className="rounded-md bg-[#ffaaaa] 
-               px-2 py-1 
-                sm:px-2 sm:py-1 
-                md:px-4 md:py-1 /
-                text-white text-xl 
-                
-                ring-1 ring-transparent 
-                transition hover:bg-[#FF2D20] focus:outline-none 
-                dark:hover:text-white/80 dark:focus-visible:ring-white"
-                          >
-                            Register
-                          </Link>
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
-              )}
+                    <i className="text-xl text-black fas fa-user" />
+                  </Link>
+                ) : (
+                  <div className="relative flex items-center gap-4 bg-[#b2f7ef] w-full justify-center px-3 xs:w-full xs:py-4 md:py-2 rounded-lg ">
+                    <span className="text-lg font-chewy text-[#1a659e]">
+                      Λογαριασμός
+                    </span>
+                    <button
+                      onClick={() => setMenuOpen(!isMenuOpen)}
+                      className="text-gray-700 transition duration-150 ease-in-out transform hover:text-gray-900 active:scale-95"
+                    >
+                      <i className="text-xl text-[#1a659e] fas fa-user transition transform duration-150 ease-in-out active:scale-95" />
+                    </button>
+                    {isMenuOpen && (
+                      <div className="absolute left-1/2 transform -translate-x-1/2 z-30 flex justify-center gap-2 w-[100%] h-[100px] top-20 mx-auto bg-[#FEE4E3] rounded-lg shadow-xl">
+                        {/* Only show these options if user is not logged in */}
+                        {!auth.user ? (
+                          <div className="flex items-center justify-center gap-2">
+                            <Link
+                              href={route("login")}
+                              className="rounded-md px-2 py-1 sm:px-2 sm:py-1 md:px-4 md:py-1 text-white text-xl bg-[#58A8AB] hover:bg-[#4E9F9D]"
+                            >
+                              Log in
+                            </Link>
+                            <Link
+                              href={route("register")}
+                              className="rounded-md bg-[#ffaaaa] px-2 py-1 sm:px-2 sm:py-1 md:px-4 md:py-1 text-white text-xl ring-1 ring-transparent transition hover:bg-[#FF2D20] focus:outline-none dark:hover:text-white/80 dark:focus-visible:ring-white"
+                            >
+                              Register
+                            </Link>
+                          </div>
+                        ) : (
+                          <div className="flex items-center justify-center">
+                            <Link
+                              href={route("dashboard")}
+                              className="rounded-md px-2 py-1 bg-[#78BBC9] text-white transition hover:bg-[#FF2D20]"
+                            >
+                              Dashboard
+                            </Link>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
 
               {/*      <Link
                                 href={route("Διαγωνισμός")}
