@@ -42,7 +42,7 @@ class CraftController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'img_url' => 'required|file|image|max:2048',  // Ensure the image is valid
-            'pdf_url' => 'required|file|mimes:pdf|max:10240', // Ensure the PDF is valid
+            'pdf_url' => 'required|file|mimes:pdf,jpeg,png,jpg,gif,svg|max:10240', // Ensure the PDF is valid
         ]);
 
         $validatedData['user_id'] = Auth::id();
@@ -91,7 +91,7 @@ class CraftController extends Controller
             'title' => 'nullable|string|max:255',
             'description' => 'nullable|string',
             'img_url' => 'nullable|image|max:2048',
-            'pdf_url' => 'nullable|mimes:pdf|max:10240',
+            'pdf_url' => 'nullable|mimes:pdf,jpeg,png,jpg,gif,svg|max:10240',
         ]);
 
 
