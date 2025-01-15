@@ -101,6 +101,7 @@ export default function Navigation({ auth }: PageProps) {
               >
                 Ποιοι είμαστε
               </Link>
+
               <Link
                 href={route("Επικοινωνία")}
                 className="rounded-lg bg-[#F4DD41] px-4 py-1.5  text-white lg:text-md transition hover:bg-[#fe7171] focus:outline-none flex items-center"
@@ -300,6 +301,12 @@ export default function Navigation({ auth }: PageProps) {
                       className="block px-8 w-full xs:py-4 text-center md:py-2 -mx-3 text-lg  leading-7 text-white bg-[#ffca3a] rounded-lg hover:bg-[#f9df5e] transition transform duration-150 ease-in-out active:scale-95"
                     >
                       Ποιοι είμαστε
+                    </Link>
+                    <Link
+                      href={route("donate")}
+                      className="block px-8 w-full xs:py-4 text-center md:py-2 -mx-3 text-lg  leading-7 text-white bg-[#3da0f6] rounded-lg hover:bg-[#f9df5e] transition transform duration-150 ease-in-out active:scale-95"
+                    >
+                      Donate
                     </Link>
 
                     <Link

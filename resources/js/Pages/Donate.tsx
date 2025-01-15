@@ -9,7 +9,7 @@ const Donate = ({ auth }: PageProps) => {
       bgColorClass="bg-[#0097E6]"
     >
       <div
-        className="bg-[#ffec9e] h-[100%]   bg-[url('/images/bgdonate.png')] md:bg-contain bg-cover bg-no-repeat bg-center  flex justify-center items-center flex-col 
+        className="bg-[#ffec9e] h-[100%]   bg-[url('/images/bgdonate.png')] md:bg-cover bg-cover bg-no-repeat lg:bg-repeat sm:bg-bottom  flex justify-center items-center flex-col 
        "
       >
         {" "}
