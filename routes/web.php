@@ -74,6 +74,11 @@ Route::get('/blog', function () {
         'pageTitle' => 'Blog',
     ]);
 })->name('blog');
+Route::get('/donate', function () {
+    return Inertia::render('Donate', [
+        'pageTitle' => 'Donate',
+    ]);
+})->name('donate');
 
 // Competition page route (GET)
 Route::get('/competition', function () {

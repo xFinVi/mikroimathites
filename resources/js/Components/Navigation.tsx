@@ -107,6 +107,12 @@ export default function Navigation({ auth }: PageProps) {
               >
                 Επικοινωνία
               </Link>
+              <Link
+                href={route("donate")}
+                className="rounded-lg bg-[#4197f4] px-4 py-1.5  text-white lg:text-md transition hover:bg-[#fe7171] focus:outline-none flex items-center"
+              >
+                Donate
+              </Link>
               <div>
                 {" "}
                 {auth.user ? (
@@ -118,15 +124,15 @@ export default function Navigation({ auth }: PageProps) {
                     <i className="text-xl text-black fas fa-user" />
                   </Link>
                 ) : (
-                  <div className="relative flex items-center gap-4 bg-[#b2f7ef] w-full justify-center px-3 xs:w-full xs:py-4 md:py-2 rounded-lg ">
-                    <span className="text-lg font-chewy text-[#1a659e]">
+                  <div className="rounded-lg bg-[#b2f7ef] px-4 py-1.5  text-white lg:text-md transition hover:bg-[#1a659e] focus:outline-none flex items-center">
+                    <span className="font-chewy text-[#1a659e]">
                       Λογαριασμός
                     </span>
                     <button
                       onClick={() => setMenuOpen(!isMenuOpen)}
                       className="text-gray-700 transition duration-150 ease-in-out transform hover:text-gray-900 active:scale-95"
                     >
-                      <i className="text-xl text-[#1a659e] fas fa-user transition transform duration-150 ease-in-out active:scale-95" />
+                      <i className="lg:text-md text-[#1a659e] fas fa-user transition transform duration-150 ease-in-out active:scale-95" />
                     </button>
                     {isMenuOpen && (
                       <div className="absolute left-1/2 transform -translate-x-1/2 z-30 flex justify-center gap-2 w-[100%] h-[100px] top-20 mx-auto bg-[#FEE4E3] rounded-lg shadow-xl">
