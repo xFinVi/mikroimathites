@@ -19,6 +19,7 @@ const Donate = ({ auth }: PageProps) => {
             Η δωρέα δεν ειναι απαραίτητη , εμείς θα συνεχίσουμε να δινουμε τον
             καλυτερο μας εαυτο για τα παιδια μας.
           </h1>
+
           <form
             action="https://www.paypal.com/donate"
             method="post"
@@ -30,8 +31,9 @@ const Donate = ({ auth }: PageProps) => {
               value="P8FY7TRDVBJMC"
             />
             <input
+              className="h-auto transition-shadow duration-300 rounded-lg shadow-lg bg-green-50/65 mt-14 w-80 sm:w-48 md:w-64 lg:w-72 hover:shadow-xl"
               type="image"
-              src="https://pics.paypal.com/00/s/NjA4Nzk1MzAtNDFmYS00Y2E2LTk2ZDUtZGQ3ZTk0MmU1NTIz/file.PNG"
+              src="https://pics.paypal.com/00/s/MjZiZTc2MGEtMjMyNS00ZGVlLWFkNjEtMjc0ODE1YzY5ZjBh/file.PNG"
               name="submit"
               title="PayPal - The safer, easier way to pay online!"
               alt="Donate with PayPal button"
@@ -45,14 +47,14 @@ const Donate = ({ auth }: PageProps) => {
           </form>
         </div>
         <div className="px-4 py-2  text-[#444444] max-w-lg leading-relaxe"></div>
-        <div className="flex flex-row flex-wrap items-center justify-center text-center sm:flex-row">
+        <div className="flex flex-row flex-wrap items-center justify-center w-full text-center sm:flex-row">
           <img
-            className="flex-1 w-[220px] sm:w-[320px] sm:max-w-[320px]   md:w-[350px] md:max-w-[375px] lg:w-[500px]  lg:max-w-[650px] object-contain"
+            className="custom-img  w-[490px] sm:w-[320px] sm:max-w-none md:w-[350px] lg:w-[500px] lg:max-w-[650px]"
             src="/images/cloud1.png"
             alt="cloud message"
           />
           <img
-            className="flex-1 w-[220px] sm:w-[320px] sm:max-w-[320px]   md:w-[350px] md:max-w-[375px] lg:w-[500px]  lg:max-w-[650px] object-contain"
+            className="custom-img  w-[490px] sm:w-[320px] sm:max-w-none md:w-[350px] lg:w-[500px] lg:max-w-[650px]"
             src="/images/cloud2.png"
             alt="cloud message"
           />

@@ -144,6 +144,11 @@ p {
     font-weight: bolder;
 }
 
+.custom-img {
+    max-width: none !important; /* Removes the restriction */
+    height: auto !important;
+    overflow: scroll; /* Keeps the aspect ratio */
+}
 @keyframes bgTransition {
     0% {
         width: 0;

@@ -112,7 +112,7 @@ export default function Navigation({ auth }: PageProps) {
                 href={route("donate")}
                 className="rounded-lg bg-[#4197f4] px-4 py-1.5  text-white lg:text-md transition hover:bg-[#fe7171] focus:outline-none flex items-center"
               >
-                Donate
+                Στηρίξτε μας
               </Link>
               <div>
                 {" "}
@@ -306,7 +306,7 @@ export default function Navigation({ auth }: PageProps) {
                       href={route("donate")}
                       className="block px-8 w-full xs:py-4 text-center md:py-2 -mx-3 text-lg  leading-7 text-white bg-[#3da0f6] rounded-lg hover:bg-[#f9df5e] transition transform duration-150 ease-in-out active:scale-95"
                     >
-                      Donate
+                      Στηρίξτε μας
                     </Link>
 
                     <Link

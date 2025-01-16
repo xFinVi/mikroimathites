@@ -62,7 +62,7 @@ Route::get('/video', function () {
 })->name('video');
 
 // About page route
-Route::get('/about', function () {
+Route::get('/poioi-eimaste', function () {
     return Inertia::render('About', [
         'pageTitle' => 'Ποιοι Είμαστε',
     ]);
@@ -74,7 +74,7 @@ Route::get('/blog', function () {
         'pageTitle' => 'Blog',
     ]);
 })->name('blog');
-Route::get('/donate', function () {
+Route::get('/stirixte-mas', function () {
     return Inertia::render('Donate', [
         'pageTitle' => 'Donate',
     ]);
