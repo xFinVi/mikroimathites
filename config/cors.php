@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'], // You can adjust this to specific methods if needed
 
-    'allowed_origins' => ['https://mikroimathites.gr'], // Only allow your frontend origin
+    'allowed_origins' => ['https://mikroimathites.gr', 'http://localhost:8000'], // Only allow your frontend origin
 
     'allowed_origins_patterns' => [],
 

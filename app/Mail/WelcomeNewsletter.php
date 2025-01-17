@@ -3,10 +3,13 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
-use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use SendGrid\Mail\Mail as SendGridMail;
+use SendGrid\Mail\From;
+use SendGrid\Mail\To;
+use SendGrid\Mail\Content;
+
 
 class WelcomeNewsletter extends Mailable
 {
@@ -19,21 +22,20 @@ class WelcomeNewsletter extends Mailable
         $this->email = $email;
     }
 
-    // Set the email subject
-    public function envelope()
-    {
-        return (new Envelope())
-            ->subject('Welcome to our Newsletter!');
-    }
+
 
     // Define the content of the email
     public function build()
     {
-        return $this->view('emails.welcome')
+
+        return $this->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'))
+            ->subject('Καλωσορίσατε στο Newsletter μας!')
+            ->view('emails.welcome_newsletter')
             ->with([
                 'email' => $this->email,
             ]);
     }
+
 
     // Attachments (if any)
     public function attachments(): array

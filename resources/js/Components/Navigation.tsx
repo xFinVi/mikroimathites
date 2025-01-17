@@ -180,7 +180,7 @@ export default function Navigation({ auth }: PageProps) {
           <div className="absolute sm:left-16 xs:left-4 xs:w-[230px] sm:w-[260px] top-1 flex items-center justify-center w-[200px] h-full">
             <Link href="/" className="">
               <img
-                src="/Images/Logo Mikroi Ma8htes NO Bg .png"
+                src="Images/logoMikroimathites.png"
                 alt="Mikroi Mathites Logo"
                 className="z-[1050]  object-contain" // Set a fixed height for the logo
               />

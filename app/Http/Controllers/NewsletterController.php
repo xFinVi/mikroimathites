@@ -32,4 +32,23 @@ class NewsletterController extends Controller
 
         return response()->json(['message' => 'Thank you for subscribing!'], 200);
     }
+
+
+    public function unsubscribe($email)
+    {
+        // Find the subscriber by their email
+        $subscriber = NewsletterSubscriber::where('email', $email)->first();
+
+        // If subscriber exists
+        if ($subscriber) {
+            // Optionally: you can just delete the subscriber or flag them as unsubscribedenv
+            $subscriber->delete();  // Delete the record
+            // Or use: $subscriber->update(['subscribed' => false]); for soft unsubscribing
+
+            // Return a confirmation message
+            return view('emails.unsubscribed', ['email' => $email]);
+        }
+
+        return view('emails.unsubscribed', ['email' => $email, 'error' => 'This email is not subscribed to the newsletter.']);
+    }
 }
