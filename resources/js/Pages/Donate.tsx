@@ -9,7 +9,7 @@ const Donate = ({ auth }: PageProps) => {
       bgColorClass="bg-[#0097E6]"
     >
       <div
-        className="bg-[#ffec9e] h-[100%]   bg-[url('Images/bgdonate.png')] md:bg-cover bg-cover bg-no-repeat lg:bg-repeat sm:bg-bottom  flex justify-center items-center flex-col 
+        className="bg-[#ffec9e] h-[100%]   bg-[url('/Images/BGDonate.png')] md:bg-cover bg-cover bg-no-repeat lg:bg-repeat sm:bg-bottom  flex justify-center items-center flex-col 
        "
       >
         {" "}
@@ -50,7 +50,7 @@ const Donate = ({ auth }: PageProps) => {
         <div className="flex flex-row flex-wrap items-center justify-center w-full text-center sm:flex-row">
           <img
             className="custom-img  w-[490px] sm:w-[320px] sm:max-w-none md:w-[350px] lg:w-[500px] lg:max-w-[650px]"
-            src="/images/cloud1.png"
+            src="Images/cloud1.png"
             alt="cloud message"
           />
 
