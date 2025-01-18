@@ -151,7 +151,6 @@ Route::middleware('auth')->group(function () {
 
 
 
-
 /*
 |--------------------------------------------------------------------------
 | Newsletter Subscription
