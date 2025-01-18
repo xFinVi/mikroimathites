@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\NewsletterSubscriber;
 use App\Mail\WelcomeNewsletter;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class NewsletterController extends Controller
@@ -24,9 +25,13 @@ class NewsletterController extends Controller
         ]);
 
         // Send the welcome email
+        // In your controller
         try {
-            Mail::to($subscriber->email)->send(new WelcomeNewsletter($subscriber->email));
+            Log::info('Sending email to: ' . $subscriber->email);
+            Mail::to($subscriber->email)->queue(new WelcomeNewsletter($subscriber->email));
+            Log::info('Email queued successfully');
         } catch (\Exception $e) {
+            Log::error('Failed to queue email: ' . $e->getMessage());
             return response()->json(['message' => 'Failed to send the welcome email. Please try again later.'], 500);
         }
 
