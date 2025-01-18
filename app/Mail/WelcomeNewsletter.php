@@ -26,6 +26,7 @@ class WelcomeNewsletter extends Mailable implements ShouldQueue
     {
         return new Envelope(
             from: new Address(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME')),
+            replyTo: [new Address('no-reply@mikroimathites.gr', 'No Reply')],
             subject: 'Καλώς ήρθατε στο Newsletter μας!'
         );
     }

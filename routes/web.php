@@ -151,7 +151,6 @@ Route::middleware('auth')->group(function () {
 
 
 
-
 /*
 |--------------------------------------------------------------------------
 | Newsletter Subscription
@@ -162,6 +161,12 @@ Route::middleware('auth')->group(function () {
 // Handle newsletter subscription form submissions
 Route::post('/api/subscribe', [NewsletterController::class, 'subscribe']);
 Route::get('/unsubscribe/{email}', [NewsletterController::class, 'unsubscribe'])->name('unsubscribe');
+// Route::get('/preview-email', function () {
+//     $email = 'test@gmail.com';
+//     $html = (new WelcomeNewsletter($email))->render(); // Renders the email view as HTML
+
+//     return response($html)->header('Content-Type', 'text/html'); // Display HTML in browser
+// });
 
 /*
 |--------------------------------------------------------------------------

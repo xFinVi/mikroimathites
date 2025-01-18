@@ -69,6 +69,8 @@
             </div>
             <!-- Footer Section -->
             <div style="font-size: 12px; text-align: center; color: #4A5568; margin-bottom:20px;">
+                <p>Για οποιαδήποτε ερώτηση παρακαλώ επικοινωνήστε μαζί μας εδω: <a
+                        href="https://mikroimathites.gr/contact">ΕΠΟΙΚΟΙΝΩΝΙΑ</a>.</p>
                 <p>Αν δεν επιθυμείτε να λαμβάνετε άλλο περιεχόμενο, μπορείτε να <a
                         href="{{ url('/unsubscribe/' . urlencode($email)) }}"
                         style="color: #EF4444; text-decoration: underline;" target="_blank">απεγγραφείτε</a>.</p>
