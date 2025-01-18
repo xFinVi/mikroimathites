@@ -21,7 +21,7 @@
                     μας!</p>
             </div>
             <div style=" margin-bottom: 20px;">
-                <img src="/Images/newsletterBG.png" alt="Μικροί Μαθητές Logo"
+                <img src="https://mikroimathites.gr/Images/newsletterBG.png" alt="Bruno and Victoria "
                     style="max-width: 100%; margin-bottom: 20px;">
             </div>
             <!-- Body Section -->
