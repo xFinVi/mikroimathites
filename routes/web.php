@@ -167,6 +167,7 @@ Route::get('/unsubscribe/{email}', [NewsletterController::class, 'unsubscribe'])
 
 //     return response($html)->header('Content-Type', 'text/html'); // Display HTML in browser
 // });
+
 /*
 |--------------------------------------------------------------------------
 | Authentication Routes
