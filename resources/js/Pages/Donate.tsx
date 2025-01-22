@@ -33,7 +33,7 @@ const Donate = ({ auth }: PageProps) => {
             <input
               className="h-auto transition-shadow duration-300 rounded-lg shadow-lg bg-green-50/65 mt-14 w-80 sm:w-48 md:w-64 lg:w-72 hover:shadow-xl"
               type="image"
-              src="https://pics.paypal.com/00/s/MjZiZTc2MGEtMjMyNS00ZGVlLWFkNjEtMjc0ODE1YzY5ZjBh/file.PNG"
+              src="https://pics.paypal.com/00/s/NzNjYWU3YTUtY2M3Mi00YTVhLWFkMjItNWEzMWJjZmFlYmE0/file.PNG"
               name="submit"
               title="PayPal - The safer, easier way to pay online!"
               alt="Donate with PayPal button"
