@@ -17,7 +17,7 @@ const Footer = () => {
                         className="flex items-center justify-center w-[150px] max-h-[100px]"
                     >
                         <img
-                            src="/Images/Logo Mikroi Ma8htes NO Bg .png"
+                            src="Images/Logo Mikroi Ma8htes NO Bg .png"
                             alt="Mikroi Mathites Logo"
                             className="max-h-[80px]"
                         />
