@@ -86,6 +86,11 @@ Route::get('/competition', function () {
         'pageTitle' => 'Διαγωνισμός',
     ]);
 })->name('Διαγωνισμός');
+Route::get('/newsletter', function () {
+    return Inertia::render('Newsletter', [
+        'pageTitle' => 'Τα νέα μας',
+    ]);
+})->name('Newsletter');
 
 // Handle competition form submission (POST)
 Route::post('/competition', [FeedbackController::class, 'store']);

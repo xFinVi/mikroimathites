@@ -75,8 +75,8 @@ export default function Navigation({ auth }: PageProps) {
               </div>
             </button>
           </div>
-          <PopoverGroup className="relative hidden w-3/4 ml-auto lg:flex justify-center lg:gap-x-2 h-[100%]">
-            <div className="flex items-center gap-2">
+          <PopoverGroup className="relative hidden w-full  lg:flex  lg:gap-x-2 h-[100%]">
+            <div className="flex items-center justify-center w-[100%] gap-4">
               <a
                 href="/"
                 className="rounded-md bg-[#b15eec] px-4 py-1.5 flex items-center text-white lg:text-md transition hover:bg-[#9f51d6] focus:outline-none"
@@ -95,6 +95,12 @@ export default function Navigation({ auth }: PageProps) {
               >
                 Blog
               </Link> */}
+              <Link
+                href={route("Newsletter")}
+                className="rounded-lg bg-[#0084DA] px-4 py-1.5  flex items-center text-white lg:text-md transition hover:bg-[#ffc31e] focus:outline-none"
+              >
+                Τα Νέα μας
+              </Link>
               <Link
                 href={route("ΠοιοιΕίμαστε")}
                 className="rounded-lg bg-[#43B756] px-4 py-1.5  flex items-center text-white lg:text-md transition hover:bg-[#308184] focus:outline-none"
@@ -177,15 +183,6 @@ export default function Navigation({ auth }: PageProps) {
                             </Link> */}
             </div>
           </PopoverGroup>
-          <div className="absolute sm:left-16 xs:left-4 xs:w-[230px] sm:w-[260px] top-1 flex items-center justify-center w-[200px] h-full">
-            <Link href="/" className="">
-              <img
-                src="/Images/logoMikroimathites.png"
-                alt="Mikroi Mathites Logo"
-                className="z-[1050]  object-contain" // Set a fixed height for the logo
-              />
-            </Link>
-          </div>
 
           {/*     <div className="hidden gap-3 lg:items-center lg:flex lg:justify-end">
                         <div className="flex items-center justify-end gap-2 p-2 mt-2 text-xl sm:gap-2 md:gap-4">
@@ -274,21 +271,21 @@ export default function Navigation({ auth }: PageProps) {
                                     </DisclosurePanel> */}
                     <Link
                       href="/"
-                      className="block px-3 md:py-2 xs:py-4 text-center -mx-3 text-lg  leading-7  w-full text-white bg-[#9031cc] rounded-lg hover:bg-[#7a358a] transition transform duration-150 ease-in-out active:scale-95 "
+                      className="block px-3 md:py-2 xs:py-4 text-center -mx-3 text-lg  leading-7  w-full text-white bg-[#ffca3a] rounded-lg hover:bg-[#f9df5e] transition transform duration-150 ease-in-out active:scale-95 "
                     >
                       Αρχική
                     </Link>
                     <Link
                       href={route("Δημιουργίες")}
-                      className="block px-3 md:py-2 xs:py-4 text-center -mx-3 text-lg  leading-7 w-full text-white bg-[#49c92cfa] rounded-lg hover:bg-[#7a358a] transition transform  duration-150 ease-in-out active:scale-95"
+                      className="block px-3 md:py-2 xs:py-4 text-center -mx-3 text-lg  leading-7 w-full text-white bg-[#f33b3b] rounded-lg hover:bg-[#993a3a] transition transform  duration-150 ease-in-out active:scale-95"
                     >
                       Δημιουργίες
                     </Link>
                     <Link
-                      href={route("video")}
-                      className="block px-3 md:py-2 xs:py-4 text-center -mx-3 text-lg  leading-7  w-full text-white bg-[#ff595e] rounded-lg hover:bg-[#7e2c31] transition transform duration-150 ease-in-out active:scale-95"
+                      href={route("Newsletter")}
+                      className="block px-3 md:py-2 xs:py-4 text-center -mx-3 text-lg  leading-7  w-full text-white bg-[#49c92cfa] rounded-lg hover:bg-[#396c2efa] transition transform duration-150 ease-in-out active:scale-95"
                     >
-                      Βίντεο
+                      Τα Νέα μας
                     </Link>
                     {/*     <Link
                                         href={route("blog")}
@@ -298,13 +295,13 @@ export default function Navigation({ auth }: PageProps) {
                                     </Link> */}
                     <Link
                       href={route("ΠοιοιΕίμαστε")}
-                      className="block px-8 w-full xs:py-4 text-center md:py-2 -mx-3 text-lg  leading-7 text-white bg-[#ffca3a] rounded-lg hover:bg-[#f9df5e] transition transform duration-150 ease-in-out active:scale-95"
+                      className="block px-8 w-full xs:py-4 text-center md:py-2 -mx-3 text-lg  leading-7 text-white bg-[#3da0f6] rounded-lg hover:bg-[#77b0e1] transition transform duration-150 ease-in-out active:scale-95"
                     >
                       Ποιοι είμαστε
                     </Link>
                     <Link
                       href={route("donate")}
-                      className="block px-8 w-full xs:py-4 text-center md:py-2 -mx-3 text-lg  leading-7 text-white bg-[#3da0f6] rounded-lg hover:bg-[#f9df5e] transition transform duration-150 ease-in-out active:scale-95"
+                      className="block px-8 w-full xs:py-4 text-center md:py-2 -mx-3 text-lg  leading-7 text-white bg-[#c676d8] rounded-lg hover:bg-[#e675ff] transition transform duration-150 ease-in-out active:scale-95"
                     >
                       Στηρίξτε μας
                     </Link>
@@ -431,8 +428,9 @@ export default function Navigation({ auth }: PageProps) {
                       className="flex items-center justify-center "
                     >
                       <img
-                        src="/Images/Logo Mikroi Ma8htes NO Bg .png"
+                        src="/Images/logoMikroimathites.png"
                         alt="Mikroi Mathites Logo"
+                        className="w-[200px]"
                       />
                     </Link>
                   </div>

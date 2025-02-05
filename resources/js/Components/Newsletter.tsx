@@ -69,7 +69,7 @@ export default function Newsletter() {
           <Confetti width={window.outerWidth} height={window.innerHeight} />
         </div>
       )}
-      <h1 className="text-2xl font-bold text-[#78D3EF] mb-4 text-center ">
+      <h1 className="text-3xl font-bold text-[#78D3EF] mb-4 text-center ">
         Ο μικρός μας ταχυδρόμος!
       </h1>
       <p className="max-w-md mb-6 text-center text-gray-600">
@@ -81,7 +81,7 @@ export default function Newsletter() {
 
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col items-center gap-4 sm:flex-row"
+        className="flex flex-col items-center w-full gap-4 "
       >
         <input
           type="email"
@@ -89,14 +89,15 @@ export default function Newsletter() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Βάλε το email σου "
-          className="w-full sm:w-72 p-3 rounded-md border border-gray-300 text-gray-700 focus:outline-none focus:border-[#78D3EF]"
+          className="w-2/3 sm:w-72 p-3 rounded-md border border-gray-300 text-gray-700 focus:outline-none focus:border-[#78D3EF]"
           required
         />
+
         <button
           type="submit"
-          className="px-6 py-3 bg-[#78D3EF] text-white font-semibold rounded-md hover:bg-[#5bb4d8] transition duration-300"
+          className="w-2/3 sm:w-72 p-3 rounded-md border text-white border-gray-300 bg-[#55a6fc] focus:outline-none focus:border-[#78D3EF]"
         >
-          Δήλωσε συμμετοχή
+          Εγγραφείτε
         </button>
       </form>
       {success && (
@@ -109,7 +110,7 @@ export default function Newsletter() {
         </div>
       )}
       {error && <div className="mt-2 text-red-600">{error}</div>}
-      <p className="max-w-md mt-4 text-xs text-center text-gray-500 mynerve">
+      <p className="max-w-md mt-4 text-sm text-center text-gray-500 mynerve">
         Με την εγγραφή σας, συμφωνείτε να λαμβάνετε τα email μας. Μπορείτε να
         διαγραφείτε οποιαδήποτε στιγμή..
       </p>

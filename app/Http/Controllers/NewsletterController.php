@@ -7,6 +7,8 @@ use App\Mail\WelcomeNewsletter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use MailerLiteApi\MailerLite;
+
 
 class NewsletterController extends Controller
 {
@@ -27,12 +29,24 @@ class NewsletterController extends Controller
         // Send the welcome email
         // In your controller
         try {
-            Log::info('Sending email to: ' . $subscriber->email);
-            Mail::to($subscriber->email)->queue(new WelcomeNewsletter($subscriber->email));
-            Log::info('Email queued successfully');
+
+
+            $mailerlite = new MailerLite(env('MAILERLITE_API'));
+            $groupsApi = $mailerlite->groups();
+            $subscriberData = [
+                'email' => $subscriber->email,
+                'fields' => [
+                    'name' => $subscriber->name ?? null
+                ],
+            ];
+            Log::info('Subscribed to MailerLite: ' . $subscriber->email);
+            $result = $groupsApi->addSubscriber(env('MAILERLITE_GROUP_ID'), $subscriberData);
+            Log::info('MailerLite subscription result: ' . json_encode($result, JSON_PRETTY_PRINT));
         } catch (\Exception $e) {
-            Log::error('Failed to queue email: ' . $e->getMessage());
-            return response()->json(['message' => 'Failed to send the welcome email. Please try again later.'], 500);
+            Log::error('Failed to subscribe to MailerLite: ' . $e->getMessage());
+            // Optionally, you might want to rollback the database entry if subscription fails
+            $subscriber->delete();
+            return response()->json(['message' => 'Failed to subscribe. Please try again later.'], 500);
         }
 
         return response()->json(['message' => 'Thank you for subscribing!'], 200);
@@ -50,6 +64,16 @@ class NewsletterController extends Controller
             $subscriber->delete();  // Delete the record
             // Or use: $subscriber->update(['subscribed' => false]); for soft unsubscribing
 
+            try {
+                $mailerlite = new MailerLite(env('MAILERLITE_API'));
+                $groupsApi = $mailerlite->groups();
+                $groupsApi->removeSubscriber(env('MAILERLITE_GROUP_ID'), $email);
+                Log::info('Unsubscribed from MailerLite: ' . $email, $groupsApi);
+            } catch (\Exception $e) {
+                Log::error('Failed to unsubscribe from MailerLite: ' . $e->getMessage());
+                // Optionally handle this error
+
+            }
             // Return a confirmation message
             return view('emails.unsubscribed', ['email' => $email]);
         }
