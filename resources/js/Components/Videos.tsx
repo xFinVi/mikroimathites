@@ -72,7 +72,6 @@ export default function Videos() {
               src="https://www.youtube.com/embed/nvhKpWkNWxk"
               title="Τα Γενέθλια του Μπρούνο | Μαθαίνω με την Βικτωρία - Αριθμούς, Χρώματα, Λέξεις | Εκπαιδευτικά Βίντεο"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
             ></iframe>
           </div>
@@ -92,7 +91,6 @@ export default function Videos() {
               src="https://www.youtube.com/embed/_mnc7Nb71Xk"
               title="Βλέπω και Μαθαίνω με την Βικτωρία - Η Μαγειρική με Σεφ Μπρούνο"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
             ></iframe>
           </div>
