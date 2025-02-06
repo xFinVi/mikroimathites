@@ -79,7 +79,7 @@ export default function Login({
             <Checkbox
               name="remember"
               checked={data.remember}
-              onChange={(e) => setData("remember", e.target.checked)}
+              onChange={() => setData("remember", false)}
             />
             <span className="text-sm text-white ms-2">Remember me</span>
           </label>
