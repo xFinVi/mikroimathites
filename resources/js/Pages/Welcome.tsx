@@ -15,6 +15,11 @@ import Spinner from "@/Components/Spinner";
 
 const craftsData = [
   {
+    image: "/Images/xeirotexnies/birthdayHatCraft.jpeg",
+    title: "Μικρός Μαθητής",
+    location: "Ελλάδα",
+  },
+  {
     image: "/Images/xeirotexnies/alexandros.jpeg",
     title: "Αλέξανδρος",
     location: "Αγγλία",
