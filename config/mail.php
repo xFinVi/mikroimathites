@@ -14,7 +14,8 @@ return [
     |
     */
 
-    'default' => env('MAIL_MAILER', 'sendgrid'),
+
+    'default' => env('MAIL_MAILER', 'smtp'),
 
     /*
     |--------------------------------------------------------------------------
@@ -38,17 +39,12 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => env('MAIL_HOST', 'smtp.sendgrid.net'),
+            'host' => env('MAIL_HOST', 'smtp.mailersend.net'),
             'port' => env('MAIL_PORT', 587),
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'username' => env('MAIL_USERNAME', 'apikey'),
+            'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
-            'auth_mode' => null,
-        ],
-
-        'sendgrid' => [
-            'transport' => 'sendgrid',
         ],
 
         'ses' => [
@@ -57,10 +53,6 @@ return [
 
         'postmark' => [
             'transport' => 'postmark',
-            // 'message_stream_id' => env('POSTMARK_MESSAGE_STREAM_ID'),
-            // 'client' => [
-            //     'timeout' => 5,
-            // ],
         ],
 
         'resend' => [
@@ -96,8 +88,8 @@ return [
                 'postmark',
             ],
         ],
-
     ],
+
 
     /*
     |--------------------------------------------------------------------------

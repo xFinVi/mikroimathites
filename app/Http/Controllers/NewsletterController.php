@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\NewsletterSubscriber;
 use App\Mail\WelcomeNewsletter;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 use MailerLiteApi\MailerLite;
 
 
@@ -36,11 +38,18 @@ class NewsletterController extends Controller
             $subscriberData = [
                 'email' => $subscriber->email,
                 'fields' => [
-                    'name' => $subscriber->name ?? null
+                    'name' => $subscriber->name ?? null,
+                    'feedback_token' => ($token = Str::random(60))
                 ],
             ];
-            Log::info('Subscribed to MailerLite: ' . $subscriber->email);
+            User::updateOrCreate(
+                ['email' => $subscriber->email],
+                ['feedback_token' => $token]
+            );
+
             $result = $groupsApi->addSubscriber(env('MAILERLITE_GROUP_ID'), $subscriberData);
+
+
             Log::info('MailerLite subscription result: ' . json_encode($result, JSON_PRETTY_PRINT));
         } catch (\Exception $e) {
             Log::error('Failed to subscribe to MailerLite: ' . $e->getMessage());

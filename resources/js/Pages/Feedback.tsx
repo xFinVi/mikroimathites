@@ -10,7 +10,7 @@ import Confetti from "react-confetti";
 import PageLayout from "@/Layouts/PageLayout";
 import { Head } from "@inertiajs/react";
 
-const Competition = ({ auth }: PageProps) => {
+const Feedback = ({ auth }: PageProps) => {
   const [feedbacks, setFeedbacks] = useState<any[]>([]); // Replace 'any' with a more specific type if possible
   const [rating, setRating] = React.useState<number | null>(0);
   const [error, setError] = useState<string>("");
@@ -43,7 +43,9 @@ const Competition = ({ auth }: PageProps) => {
     }
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -71,7 +73,7 @@ const Competition = ({ auth }: PageProps) => {
     };
 
     try {
-      const response = await axios.post("/competition", userData, {
+      const response = await axios.post("/feedback", userData, {
         headers: {
           "Content-Type": "application/json",
           "X-CSRF-TOKEN": csrfToken,
@@ -157,19 +159,19 @@ const Competition = ({ auth }: PageProps) => {
                 value={formData.name}
                 onChange={handleChange}
                 id="name"
-                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-[#79baff] focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=" "
                 required
               />
               <label
                 htmlFor="name"
-                className="peer-focus:font-medium font-bold  absolute text-sm text-[#333] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#28a745] peer-focus:dark:text-[#28a745] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-medium font-bold  absolute text-sm text-[#333] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#79baff] peer-focus:dark:text-[#79baff] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Όνομα
               </label>
             </div>
 
-            <div className="relative z-0 w-full mb-5 group">
+            {/*  <div className="relative z-0 w-full mb-5 group">
               <input
                 type="text"
                 name="surname"
@@ -186,7 +188,7 @@ const Competition = ({ auth }: PageProps) => {
               >
                 Επίθετο
               </label>
-            </div>
+            </div> */}
 
             <div className="relative z-0 w-full mb-5 group">
               <input
@@ -195,26 +197,25 @@ const Competition = ({ auth }: PageProps) => {
                 value={formData.email}
                 onChange={handleChange}
                 id="email"
-                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-[#fc9d5a] focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=" "
                 required
               />
               <label
                 htmlFor="email"
-                className="peer-focus:font-medium font-bold  absolute text-sm text-[#333] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#ff595e] peer-focus:dark:text-[#ff595e] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 font-fredoka"
+                className="peer-focus:font-medium font-bold  absolute text-sm text-[#333] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#fc9d5a] peer-focus:dark:text-[#fc9d5a] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 font-fredoka"
               >
                 Email
               </label>
             </div>
 
             <div className="relative z-0 w-full mb-5 group">
-              <input
-                type="text"
+              <textarea
                 name="like"
                 value={formData.like}
                 onChange={handleChange}
                 id="like"
-                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300  dark:text-black dark:border-gray-600 dark:focus:border-[#00D535] focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=" "
                 required
               />
@@ -222,7 +223,7 @@ const Competition = ({ auth }: PageProps) => {
                 htmlFor="like"
                 className="peer-focus:font-medium font-bold  absolute text-sm text-[#333] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#00D535] peer-focus:dark:text-[#00D535] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
-                Τι σας αρέσει στα βίντεο μας;
+                Τι θα θελατε να δειτε και τι σας αρέσει;
               </label>
             </div>
             {/*  <div className="relative z-0 w-full mb-5 group">
@@ -271,4 +272,4 @@ const Competition = ({ auth }: PageProps) => {
   );
 };
 
-export default Competition;
+export default Feedback;

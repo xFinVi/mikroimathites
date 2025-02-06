@@ -81,19 +81,25 @@ Route::get('/stirixte-mas', function () {
 })->name('donate');
 
 // Competition page route (GET)
-Route::get('/competition', function () {
-    return Inertia::render('Competition', [
-        'pageTitle' => 'Διαγωνισμός',
-    ]);
-})->name('Διαγωνισμός');
+// Route::get('/feedback/{token}', function () {
+//      FeedbackController::class, 'index'
+//     return Inertia::render('Feedback', [
+//         'pageTitle' => 'Η Γνώμη σας',
+//     ]);
+// })->name('Διαγωνισμός');
+
+Route::get('/feedback/{token}', [FeedbackController::class, 'index'])
+    ->name('Feedback');
+
 Route::get('/newsletter', function () {
+
     return Inertia::render('Newsletter', [
         'pageTitle' => 'Τα νέα μας',
     ]);
 })->name('Newsletter');
 
 // Handle competition form submission (POST)
-Route::post('/competition', [FeedbackController::class, 'store']);
+Route::post('/feedback', [FeedbackController::class, 'store']);
 
 // Contact form submission (POST)
 Route::post('/contact', [ContactController::class, 'store']);

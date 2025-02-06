@@ -11,6 +11,7 @@
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "mailerlite/mailerlite-api-v2-php-sdk": "^0.3.2",
+        "mailersend/laravel-driver": "^2.7",
         "sendgrid/sendgrid": "^8.1",
         "spatie/laravel-permission": "^6.10",
         "tightenco/ziggy": "^2.4"
