@@ -63,7 +63,7 @@ export default function Newsletter() {
     }
   }, [success]);
   return (
-    <div className="bg-[#f7f7f7]  py-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center roboto relative">
+    <div className="bg-[#dbf1f5] mt-8  py-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center roboto relative">
       {showConfetti && (
         <div className="absolute top-0 left-0 right-0 w-2/3 -mt-60">
           <Confetti width={window.outerWidth} height={window.innerHeight} />

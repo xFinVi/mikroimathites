@@ -42,11 +42,12 @@ export default function Welcome({ auth }: PageProps) {
       <Head title="Αρχική" />
       <Hero />
       <CraftsGallery crafts={craftsData} />
+      <Newsletter />
       <Videos />
       <EarlyEducation />
       <OurOffer />
       {/*  <News /> */}
-      <Newsletter />
+
       {/* <Review /> */}
     </PageLayout>
   );
