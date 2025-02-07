@@ -39,13 +39,10 @@ class NewsletterController extends Controller
                 'email' => $subscriber->email,
                 'fields' => [
                     'name' => $subscriber->name ?? null,
-                    'feedback_token' => ($token = Str::random(60))
+
                 ],
             ];
-            User::updateOrCreate(
-                ['email' => $subscriber->email],
-                ['feedback_token' => $token]
-            );
+
 
             $result = $groupsApi->addSubscriber(env('MAILERLITE_GROUP_ID'), $subscriberData);
 
@@ -55,7 +52,10 @@ class NewsletterController extends Controller
             Log::error('Failed to subscribe to MailerLite: ' . $e->getMessage());
             // Optionally, you might want to rollback the database entry if subscription fails
             $subscriber->delete();
-            return response()->json(['message' => 'Failed to subscribe. Please try again later.'], 500);
+            return response()->json([
+                'message' => 'Failed to subscribe. Please try again later.',
+                'error' => $e->getMessage(), // You can include the error message here for debugging purposes (in a development environment)
+            ], 500);
         }
 
         return response()->json(['message' => 'Thank you for subscribing!'], 200);
