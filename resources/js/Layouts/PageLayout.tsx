@@ -19,7 +19,7 @@ const PageLayout: React.FC<LayoutProps> = ({
       <Navigation auth={auth} />
       {pageTitle && (
         <div
-          className={`h-full text-center flex items-center justify-center pb-8 text-3xl font-bold pt-36 mynerve relative z-10 ${bgColorClass}`}
+          className={`h-full text-center flex items-center justify-center pb-8 text-3xl font-bold mt-28 pt-36 mynerve relative z-10 ${bgColorClass}`}
         >
           <h1 className="text-white">{pageTitle}</h1>
         </div>

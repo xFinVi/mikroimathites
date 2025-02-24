@@ -114,7 +114,14 @@ Route::get('/contact', function () {
 
 
 
-
+Route::get(
+    '/privacy',
+    function () {
+        return Inertia::render('Privacy', [
+            'pageTitle' => 'Απόρρητο',
+        ]);
+    }
+)->name('απόρρητο');
 
 Route::get('/paidikes-ergasies', [CraftController::class, 'index'])->name('Δημιουργίες');
 
