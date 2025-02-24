@@ -22,6 +22,12 @@
     </script>
     <!-- End Google Tag Manager -->
 
+  <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9945459820470269"
+     crossorigin="anonymous"></script>
+  <!-- End Google AdSense -->
+  
+  
 
     <!-- Meta tags for page settings and SEO -->
     <meta charset="utf-8">
@@ -115,7 +121,8 @@
     }
     </script>
 
-
+    <meta name="google-adsense-account" content="ca-pub-9945459820470269">
+  
     <!-- Inertia and Vite setup -->
     @routes
     @viteReactRefresh
